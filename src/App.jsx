@@ -4,10 +4,16 @@ export default function App() {
   return (
     <div className="site">
 
+      <div className="noise"></div>
+
       <header className="navbar">
 
-        <div className="logo">
-          VANTA WORKS
+        <div className="logo-wrap">
+          <div className="logo-box">VW</div>
+          <div className="logo-text">
+            <span>VANTA</span>
+            <span>WORKS</span>
+          </div>
         </div>
 
         <nav>
@@ -25,6 +31,8 @@ export default function App() {
 
       <section className="hero">
 
+        <div className="hero-bg"></div>
+
         <div className="hero-center">
 
           <div className="hero-badge">
@@ -38,7 +46,8 @@ export default function App() {
 
           <p>
             Vanta Works creates cinematic, premium websites for salons,
-            grooming brands, and modern businesses that want to stand out.
+            grooming brands, luxury businesses, and modern brands that want
+            to dominate online visually.
           </p>
 
           <div className="hero-buttons">
@@ -53,33 +62,21 @@ export default function App() {
 
           </div>
 
-          <div className="hero-stats">
-
-            <div>
-              <h2>2+</h2>
-              <span>Projects</span>
-            </div>
-
-            <div>
-              <h2>100%</h2>
-              <span>Satisfaction</span>
-            </div>
-
-            <div>
-              <h2>24/7</h2>
-              <span>Support</span>
-            </div>
-
-          </div>
-
         </div>
+
+        <div className="hero-gradient"></div>
 
       </section>
 
-      <section className="marquee">
-        <div>
-          MODERN — PREMIUM — CINEMATIC — LUXURY — HIGH-END — RESPONSIVE
-        </div>
+      <section className="statement-section">
+
+        <span>DESIGN PHILOSOPHY</span>
+
+        <h2>
+          Every Pixel Should <br />
+          Feel Intentional.
+        </h2>
+
       </section>
 
       <section className="featured" id="work">
@@ -98,10 +95,15 @@ export default function App() {
             <h3>Good Fellas</h3>
 
             <p>
-              A cinematic dark-themed salon website built with immersive
-              typography, luxury spacing, smooth layout transitions,
-              and premium visual hierarchy.
+              Cinematic dark-themed salon experience with immersive typography,
+              premium spacing, luxury branding, and smooth visual hierarchy.
             </p>
+
+            <div className="tags">
+              <div>Luxury UI</div>
+              <div>Responsive</div>
+              <div>Modern Branding</div>
+            </div>
 
             <a
               href="https://good-fellassalon-a37k.vercel.app/#reviews"
@@ -113,12 +115,10 @@ export default function App() {
           </div>
 
           <div className="project-preview">
-
-            <iframe
-              src="https://good-fellassalon-a37k.vercel.app/#reviews"
-              title="Good Fellas"
-            ></iframe>
-
+            <img
+              src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?q=80&w=1200&auto=format&fit=crop"
+              alt="Project"
+            />
           </div>
 
         </div>
@@ -132,9 +132,15 @@ export default function App() {
             <h3>Shine & Glow</h3>
 
             <p>
-              Elegant premium beauty website focused on strong branding,
-              visual storytelling, and a clean modern luxury aesthetic.
+              Elegant premium beauty website focused on clean storytelling,
+              strong visual aesthetics, modern layouts, and elevated branding.
             </p>
+
+            <div className="tags">
+              <div>Beauty Brand</div>
+              <div>Minimal UI</div>
+              <div>Luxury Layout</div>
+            </div>
 
             <a
               href="https://shine-glow.vercel.app/"
@@ -146,15 +152,24 @@ export default function App() {
           </div>
 
           <div className="project-preview">
-
-            <iframe
-              src="https://shine-glow.vercel.app/"
-              title="Shine Glow"
-            ></iframe>
-
+            <img
+              src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop"
+              alt="Project"
+            />
           </div>
 
         </div>
+
+      </section>
+
+      <section className="fullscreen-break">
+
+        <div className="overlay"></div>
+
+        <h2>
+          Crafted To Feel <br />
+          Premium.
+        </h2>
 
       </section>
 
@@ -169,7 +184,6 @@ export default function App() {
 
           <div className="service-card">
             <h3>Luxury Websites</h3>
-
             <p>
               Premium responsive websites with strong visual identity.
             </p>
@@ -177,15 +191,13 @@ export default function App() {
 
           <div className="service-card">
             <h3>Brand Positioning</h3>
-
             <p>
-              Digital experiences that elevate perceived brand value.
+              Digital experiences designed to elevate brand value.
             </p>
           </div>
 
           <div className="service-card">
             <h3>Modern UI Design</h3>
-
             <p>
               Cinematic layouts focused on aesthetics and clarity.
             </p>
@@ -205,36 +217,30 @@ export default function App() {
         <div className="reviews-grid">
 
           <div className="review-card">
-
             <p>
               “The website completely transformed our brand image online.
               Clients constantly compliment the design.”
             </p>
 
             <h4>Good Fellas Salon</h4>
-
           </div>
 
           <div className="review-card">
-
             <p>
               “Very modern, premium, and smooth from start to finish.
               Exactly what we wanted.”
             </p>
 
             <h4>Shine & Glow</h4>
-
           </div>
 
           <div className="review-card">
-
             <p>
               “Professional quality and strong attention to detail.
               Highly recommended.”
             </p>
 
             <h4>Client Review</h4>
-
           </div>
 
         </div>
