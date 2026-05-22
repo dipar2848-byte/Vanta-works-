@@ -1,8 +1,14 @@
+import './styles.css'
+
 export default function App() {
   return (
     <div className="site">
+
       <header className="navbar">
-        <div className="logo">VANTA WORKS</div>
+
+        <div className="logo">
+          VANTA WORKS
+        </div>
 
         <nav>
           <a href="#work">Work</a>
@@ -11,11 +17,16 @@ export default function App() {
           <a href="#contact">Contact</a>
         </nav>
 
-        <button className="nav-btn">Start Project</button>
+        <button className="nav-btn">
+          Start Project
+        </button>
+
       </header>
 
       <section className="hero">
-        <div className="hero-left">
+
+        <div className="hero-center">
+
           <div className="hero-badge">
             PREMIUM DIGITAL EXPERIENCES
           </div>
@@ -31,6 +42,7 @@ export default function App() {
           </p>
 
           <div className="hero-buttons">
+
             <button className="primary-btn">
               View Projects
             </button>
@@ -38,9 +50,11 @@ export default function App() {
             <button className="secondary-btn">
               Let's Talk
             </button>
+
           </div>
 
           <div className="hero-stats">
+
             <div>
               <h2>2+</h2>
               <span>Projects</span>
@@ -55,47 +69,30 @@ export default function App() {
               <h2>24/7</h2>
               <span>Support</span>
             </div>
+
           </div>
+
         </div>
 
-        <div className="hero-right">
-          <div className="main-preview">
-            <iframe
-              src="https://good-fellassalon-a37k.vercel.app/#reviews"
-              title="Good Fellas"
-            ></iframe>
-          </div>
-
-          <div className="preview-row">
-            <div className="small-preview">
-              <iframe
-                src="https://shine-glow.vercel.app/"
-                title="Shine Glow"
-              ></iframe>
-            </div>
-
-            <div className="small-preview">
-              <iframe
-                src="https://good-fellassalon-a37k.vercel.app/#reviews"
-                title="Good Fellas 2"
-              ></iframe>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section className="marquee">
-        <div>MODERN — PREMIUM — CINEMATIC — LUXURY — HIGH-END — RESPONSIVE</div>
+        <div>
+          MODERN — PREMIUM — CINEMATIC — LUXURY — HIGH-END — RESPONSIVE
+        </div>
       </section>
 
       <section className="featured" id="work">
+
         <div className="section-top">
           <span>FEATURED WORK</span>
           <h2>Selected Projects</h2>
         </div>
 
         <div className="project-card">
+
           <div className="project-info">
+
             <span>Luxury Salon Website</span>
 
             <h3>Good Fellas</h3>
@@ -112,18 +109,24 @@ export default function App() {
             >
               Visit Website ↗
             </a>
+
           </div>
 
           <div className="project-preview">
+
             <iframe
               src="https://good-fellassalon-a37k.vercel.app/#reviews"
-              title="Good Fellas Frame"
+              title="Good Fellas"
             ></iframe>
+
           </div>
+
         </div>
 
         <div className="project-card reverse">
+
           <div className="project-info">
+
             <span>Beauty & Glow Experience</span>
 
             <h3>Shine & Glow</h3>
@@ -139,26 +142,34 @@ export default function App() {
             >
               Visit Website ↗
             </a>
+
           </div>
 
           <div className="project-preview">
+
             <iframe
               src="https://shine-glow.vercel.app/"
-              title="Shine Glow Frame"
+              title="Shine Glow"
             ></iframe>
+
           </div>
+
         </div>
+
       </section>
 
       <section className="services" id="services">
+
         <div className="section-top center">
           <span>SERVICES</span>
           <h2>What We Build</h2>
         </div>
 
         <div className="services-grid">
+
           <div className="service-card">
             <h3>Luxury Websites</h3>
+
             <p>
               Premium responsive websites with strong visual identity.
             </p>
@@ -166,6 +177,7 @@ export default function App() {
 
           <div className="service-card">
             <h3>Brand Positioning</h3>
+
             <p>
               Digital experiences that elevate perceived brand value.
             </p>
@@ -173,50 +185,64 @@ export default function App() {
 
           <div className="service-card">
             <h3>Modern UI Design</h3>
+
             <p>
               Cinematic layouts focused on aesthetics and clarity.
             </p>
           </div>
+
         </div>
+
       </section>
 
       <section className="reviews" id="reviews">
+
         <div className="section-top center">
           <span>CLIENT REVIEWS</span>
           <h2>Trusted by Businesses</h2>
         </div>
 
         <div className="reviews-grid">
+
           <div className="review-card">
+
             <p>
               “The website completely transformed our brand image online.
               Clients constantly compliment the design.”
             </p>
 
             <h4>Good Fellas Salon</h4>
+
           </div>
 
           <div className="review-card">
+
             <p>
               “Very modern, premium, and smooth from start to finish.
               Exactly what we wanted.”
             </p>
 
             <h4>Shine & Glow</h4>
+
           </div>
 
           <div className="review-card">
+
             <p>
               “Professional quality and strong attention to detail.
               Highly recommended.”
             </p>
 
             <h4>Client Review</h4>
+
           </div>
+
         </div>
+
       </section>
 
       <section className="contact" id="contact">
+
         <span>START YOUR PROJECT</span>
 
         <h2>
@@ -227,7 +253,9 @@ export default function App() {
         <button>
           Contact Vanta Works
         </button>
+
       </section>
+
     </div>
   )
 }
