@@ -9,11 +9,16 @@ export default function App() {
       <header className="navbar">
 
         <div className="logo-wrap">
-          <div className="logo-box">VW</div>
+
+          <div className="logo-box">
+            VW
+          </div>
+
           <div className="logo-text">
             <span>VANTA</span>
             <span>WORKS</span>
           </div>
+
         </div>
 
         <nav>
@@ -115,10 +120,24 @@ export default function App() {
           </div>
 
           <div className="project-preview">
-            <img
-              src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?q=80&w=1200&auto=format&fit=crop"
-              alt="Project"
-            />
+
+            <div className="browser-bar">
+
+              <div className="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <p>Live Preview</p>
+
+            </div>
+
+            <iframe
+              src="https://good-fellassalon-a37k.vercel.app/#reviews"
+              title="Good Fellas"
+            ></iframe>
+
           </div>
 
         </div>
@@ -152,10 +171,24 @@ export default function App() {
           </div>
 
           <div className="project-preview">
-            <img
-              src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop"
-              alt="Project"
-            />
+
+            <div className="browser-bar">
+
+              <div className="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <p>Live Preview</p>
+
+            </div>
+
+            <iframe
+              src="https://shine-glow.vercel.app/"
+              title="Shine Glow"
+            ></iframe>
+
           </div>
 
         </div>
@@ -183,24 +216,33 @@ export default function App() {
         <div className="services-grid">
 
           <div className="service-card">
+
             <h3>Luxury Websites</h3>
+
             <p>
               Premium responsive websites with strong visual identity.
             </p>
+
           </div>
 
           <div className="service-card">
+
             <h3>Brand Positioning</h3>
+
             <p>
               Digital experiences designed to elevate brand value.
             </p>
+
           </div>
 
           <div className="service-card">
+
             <h3>Modern UI Design</h3>
+
             <p>
               Cinematic layouts focused on aesthetics and clarity.
             </p>
+
           </div>
 
         </div>
@@ -217,30 +259,36 @@ export default function App() {
         <div className="reviews-grid">
 
           <div className="review-card">
+
             <p>
               “The website completely transformed our brand image online.
               Clients constantly compliment the design.”
             </p>
 
             <h4>Good Fellas Salon</h4>
+
           </div>
 
           <div className="review-card">
+
             <p>
               “Very modern, premium, and smooth from start to finish.
               Exactly what we wanted.”
             </p>
 
             <h4>Shine & Glow</h4>
+
           </div>
 
           <div className="review-card">
+
             <p>
               “Professional quality and strong attention to detail.
               Highly recommended.”
             </p>
 
             <h4>Client Review</h4>
+
           </div>
 
         </div>
