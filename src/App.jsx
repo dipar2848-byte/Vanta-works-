@@ -23,16 +23,19 @@ export default function App() {
 
         <nav>
           <a href="#work">Work</a>
-          <a href="#services">Services</a>
+          <a href="#services">Systems</a>
+          <a href="#pricing">Packages</a>
           <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <button className="nav-btn">
-          Start Project
+          Book Strategy Call
         </button>
 
       </header>
+
+      {/* HERO */}
 
       <section className="hero">
 
@@ -41,29 +44,48 @@ export default function App() {
         <div className="hero-center">
 
           <div className="hero-badge">
-            PREMIUM DIGITAL EXPERIENCES
+            DIGITAL GROWTH SYSTEMS FOR LOCAL BUSINESSES
           </div>
 
           <h1>
-            Websites That <br />
-            Feel <span>Luxury</span>
+            Websites That Turn <br />
+            Visitors Into <span>Customers</span>
           </h1>
 
           <p>
-            Vanta Works creates cinematic, premium websites for salons,
-            grooming brands, luxury businesses, and modern brands that want
-            to dominate online visually.
+            Vanta Works builds premium websites, WhatsApp lead systems,
+            booking flows, and automation setups that help businesses
+            generate more enquiries and conversions online.
           </p>
 
           <div className="hero-buttons">
 
             <button className="primary-btn">
-              View Projects
+              View Live Demo
             </button>
 
             <button className="secondary-btn">
-              Let's Talk
+              Chat on WhatsApp
             </button>
+
+          </div>
+
+          <div className="hero-stats">
+
+            <div>
+              <h3>Premium</h3>
+              <p>Modern Interfaces</p>
+            </div>
+
+            <div>
+              <h3>Fast</h3>
+              <p>3-5 Day Delivery</p>
+            </div>
+
+            <div>
+              <h3>Smart</h3>
+              <p>Lead Systems Included</p>
+            </div>
 
           </div>
 
@@ -73,48 +95,57 @@ export default function App() {
 
       </section>
 
+      {/* PROBLEM SOLUTION */}
+
       <section className="statement-section">
 
-        <span>DESIGN PHILOSOPHY</span>
+        <span>WHY BUSINESSES LOSE CUSTOMERS</span>
 
         <h2>
-          Every Pixel Should <br />
-          Feel Intentional.
+          Most Businesses Have <br />
+          No Real Lead System.
         </h2>
 
+        <p>
+          Customers visit. Nobody follows up. Leads get lost in WhatsApp.
+          We solve this using websites, booking systems, and smart enquiry flows.
+        </p>
+
       </section>
+
+      {/* FEATURED WORK */}
 
       <section className="featured" id="work">
 
         <div className="section-top">
-          <span>FEATURED WORK</span>
-          <h2>Selected Projects</h2>
+          <span>LIVE DEMOS</span>
+          <h2>Conversion-Focused Projects</h2>
         </div>
 
         <div className="project-card">
 
           <div className="project-info">
 
-            <span>Luxury Salon Website</span>
+            <span>Luxury Salon System</span>
 
             <h3>Good Fellas</h3>
 
             <p>
-              Cinematic dark-themed salon experience with immersive typography,
-              premium spacing, luxury branding, and smooth visual hierarchy.
+              Premium salon website focused on visual branding,
+              mobile conversion, WhatsApp enquiries, and modern customer experience.
             </p>
 
             <div className="tags">
-              <div>Luxury UI</div>
-              <div>Responsive</div>
-              <div>Modern Branding</div>
+              <div>WhatsApp CTA</div>
+              <div>Premium UI</div>
+              <div>Lead Focused</div>
             </div>
 
             <a
               href="https://good-fellassalon-a37k.vercel.app/#reviews"
               target="_blank"
             >
-              Visit Website ↗
+              View Live Project ↗
             </a>
 
           </div>
@@ -142,105 +173,45 @@ export default function App() {
 
         </div>
 
-        <div className="project-card reverse">
-
-          <div className="project-info">
-
-            <span>Beauty & Glow Experience</span>
-
-            <h3>Shine & Glow</h3>
-
-            <p>
-              Elegant premium beauty website focused on clean storytelling,
-              strong visual aesthetics, modern layouts, and elevated branding.
-            </p>
-
-            <div className="tags">
-              <div>Beauty Brand</div>
-              <div>Minimal UI</div>
-              <div>Luxury Layout</div>
-            </div>
-
-            <a
-              href="https://shine-glow.vercel.app/"
-              target="_blank"
-            >
-              Visit Website ↗
-            </a>
-
-          </div>
-
-          <div className="project-preview">
-
-            <div className="browser-bar">
-
-              <div className="dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <p>Live Preview</p>
-
-            </div>
-
-            <iframe
-              src="https://shine-glow.vercel.app/"
-              title="Shine Glow"
-            ></iframe>
-
-          </div>
-
-        </div>
-
       </section>
 
-      <section className="fullscreen-break">
-
-        <div className="overlay"></div>
-
-        <h2>
-          Crafted To Feel <br />
-          Premium.
-        </h2>
-
-      </section>
+      {/* HOW IT WORKS */}
 
       <section className="services" id="services">
 
         <div className="section-top center">
-          <span>SERVICES</span>
-          <h2>What We Build</h2>
+          <span>HOW THE SYSTEM WORKS</span>
+          <h2>Built To Generate Enquiries</h2>
         </div>
 
         <div className="services-grid">
 
           <div className="service-card">
 
-            <h3>Luxury Websites</h3>
+            <h3>Premium Website</h3>
 
             <p>
-              Premium responsive websites with strong visual identity.
+              Modern mobile-first experience that instantly builds trust.
             </p>
 
           </div>
 
           <div className="service-card">
 
-            <h3>Brand Positioning</h3>
+            <h3>Lead Capture System</h3>
 
             <p>
-              Digital experiences designed to elevate brand value.
+              Forms, WhatsApp flows, and enquiry tracking dashboard included.
             </p>
 
           </div>
 
           <div className="service-card">
 
-            <h3>Modern UI Design</h3>
+            <h3>Booking & Automation</h3>
 
             <p>
-              Cinematic layouts focused on aesthetics and clarity.
+              Convert visitors into appointments using simple automated flows.
             </p>
 
           </div>
@@ -249,11 +220,83 @@ export default function App() {
 
       </section>
 
+      {/* PACKAGES */}
+
+      <section className="pricing" id="pricing">
+
+        <div className="section-top center">
+          <span>PACKAGES</span>
+          <h2>Choose Your Growth System</h2>
+        </div>
+
+        <div className="pricing-grid">
+
+          <div className="price-card">
+
+            <h3>Starter</h3>
+
+            <h4>Perfect For Small Businesses</h4>
+
+            <ul>
+              <li>Premium Website</li>
+              <li>WhatsApp Integration</li>
+              <li>Mobile Optimization</li>
+              <li>Lead Capture Form</li>
+            </ul>
+
+            <button>Get Started</button>
+
+          </div>
+
+          <div className="price-card featured-price">
+
+            <div className="popular-tag">
+              MOST POPULAR
+            </div>
+
+            <h3>Growth System</h3>
+
+            <h4>Best For Scaling Businesses</h4>
+
+            <ul>
+              <li>Everything In Starter</li>
+              <li>Booking System</li>
+              <li>Lead Dashboard</li>
+              <li>Priority WhatsApp Setup</li>
+            </ul>
+
+            <button>Boost My Business</button>
+
+          </div>
+
+          <div className="price-card">
+
+            <h3>Automation</h3>
+
+            <h4>Advanced Conversion System</h4>
+
+            <ul>
+              <li>AI Chatbot</li>
+              <li>Automated Follow-Ups</li>
+              <li>Advanced Lead Flow</li>
+              <li>Conversion Optimization</li>
+            </ul>
+
+            <button>Go Automated</button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* REVIEWS */}
+
       <section className="reviews" id="reviews">
 
         <div className="section-top center">
-          <span>CLIENT REVIEWS</span>
-          <h2>Trusted by Businesses</h2>
+          <span>CLIENT RESULTS</span>
+          <h2>Trusted by Modern Businesses</h2>
         </div>
 
         <div className="reviews-grid">
@@ -261,8 +304,7 @@ export default function App() {
           <div className="review-card">
 
             <p>
-              “The website completely transformed our brand image online.
-              Clients constantly compliment the design.”
+              “The website completely upgraded our business image and brought in more enquiries.”
             </p>
 
             <h4>Good Fellas Salon</h4>
@@ -272,8 +314,7 @@ export default function App() {
           <div className="review-card">
 
             <p>
-              “Very modern, premium, and smooth from start to finish.
-              Exactly what we wanted.”
+              “Clients started contacting us directly through WhatsApp after launch.”
             </p>
 
             <h4>Shine & Glow</h4>
@@ -283,8 +324,7 @@ export default function App() {
           <div className="review-card">
 
             <p>
-              “Professional quality and strong attention to detail.
-              Highly recommended.”
+              “Premium quality with a real business-focused approach.”
             </p>
 
             <h4>Client Review</h4>
@@ -295,17 +335,24 @@ export default function App() {
 
       </section>
 
+      {/* FINAL CTA */}
+
       <section className="contact" id="contact">
 
-        <span>START YOUR PROJECT</span>
+        <span>READY TO GROW?</span>
 
         <h2>
-          Build a Brand <br />
-          That Looks Premium
+          Build a System <br />
+          That Brings Customers
         </h2>
 
+        <p>
+          Premium websites, lead systems, booking flows, and automation —
+          all designed to help your business convert better online.
+        </p>
+
         <button>
-          Contact Vanta Works
+          Start Your Project
         </button>
 
       </section>
