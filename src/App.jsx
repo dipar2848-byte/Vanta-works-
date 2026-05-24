@@ -29,9 +29,13 @@ export default function App() {
           <a href="#contact">Contact</a>
         </nav>
 
-        <button className="nav-btn">
-          Book Strategy Call
-        </button>
+        <a
+  href="https://wa.me/91YOURNUMBER"
+  target="_blank"
+  className="nav-btn"
+>
+  Book Strategy Call
+</a>
 
       </header>
 
@@ -59,15 +63,17 @@ export default function App() {
           </p>
 
           <div className="hero-buttons">
-
-            <button className="primary-btn">
-              View Live Demo
-            </button>
-
-            <button className="secondary-btn">
-              Chat on WhatsApp
-            </button>
-
+<a href="#work" className="primary-btn">
+  View Live Demo
+</a>
+            
+           <a
+  href="https://wa.me/91YOURNUMBER"
+  target="_blank"
+  className="secondary-btn"
+>
+  Chat on WhatsApp
+</a>
           </div>
 
           <div className="hero-price">
@@ -248,8 +254,12 @@ export default function App() {
               <li>Lead Capture Form</li>
             </ul>
 
-            <button>Get Started</button>
-
+           <a
+  href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Starter%20Package"
+  target="_blank"
+>
+  Get Started
+</a> 
           </div>
 
           <div className="price-card featured-price">
@@ -269,7 +279,12 @@ export default function App() {
               <li>Priority WhatsApp Setup</li>
             </ul>
 
-            <button>Boost My Business</button>
+           <a
+  href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Starter%20Package"
+  target="_blank"
+>
+  Get Started
+</a>
 
           </div>
 
@@ -285,9 +300,13 @@ export default function App() {
               <li>Advanced Lead Flow</li>
               <li>Conversion Optimization</li>
             </ul>
-
-            <button>Go Automated</button>
-
+<a
+  href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Starter%20Package"
+  target="_blank"
+>
+  Get Started
+</a>
+            
           </div>
 
         </div>
@@ -355,10 +374,13 @@ export default function App() {
           all designed to help your business convert better online.
         </p>
 
-        <button>
-          Start Your Project
-        </button>
-
+       <a
+  href="https://wa.me/91YOURNUMBER?text=Hi%20I%20want%20to%20start%20a%20project"
+  target="_blank"
+  className="contact-btn"
+>
+  Start Your Project
+</a>
       </section>
 
     </div>
