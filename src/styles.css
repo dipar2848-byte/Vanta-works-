@@ -801,3 +801,27 @@ nav a:hover {
 .price-card a:hover {
   transform: translateY(-3px);
 }
+.contact-btn {
+  padding: 20px 34px;
+  border-radius: 18px;
+  border: none;
+  background: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  text-decoration: none;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+}
