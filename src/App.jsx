@@ -69,6 +69,9 @@ export default function App() {
             </button>
 
           </div>
+<div className="hero-price">
+  Starting from ₹9,999 • Premium websites + lead systems
+</div>
 
           <div className="hero-stats">
 
