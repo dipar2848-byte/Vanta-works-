@@ -478,3 +478,285 @@ nav a:hover {
     height: 40px;
   }
 }
+/* HERO STATS */
+
+.hero-stats {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-stats div {
+  padding: 24px 30px;
+  min-width: 190px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+}
+
+.hero-stats h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.hero-stats p {
+  margin: 0;
+  color: #8e8e8e;
+  font-size: 0.95rem;
+}
+
+/* STATEMENT PARAGRAPH */
+
+.statement-section p {
+  max-width: 760px;
+  margin: 30px auto 0;
+  color: #9e9e9e;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+/* SERVICES */
+
+.services-grid {
+  margin-top: 60px;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.03),
+      transparent
+    );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:hover {
+  border-color: rgba(255,255,255,0.14);
+}
+
+/* PRICING SECTION */
+
+.pricing {
+  padding: 140px 7%;
+}
+
+.pricing-grid {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 28px;
+}
+
+.price-card {
+  position: relative;
+  padding: 50px 38px;
+  border-radius: 32px;
+  background: #0b0b0b;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: 0.35s;
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255,255,255,0.15);
+}
+
+.price-card h3 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.price-card h4 {
+  color: #8f8f8f;
+  font-weight: 400;
+  margin-bottom: 34px;
+  line-height: 1.7;
+}
+
+.price-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 42px;
+}
+
+.price-card ul li {
+  color: #d0d0d0;
+  position: relative;
+  padding-left: 28px;
+}
+
+.price-card ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: white;
+}
+
+.price-card button {
+  width: 100%;
+  padding: 18px;
+  border-radius: 16px;
+  border: none;
+  background: white;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.featured-price {
+  border: 1px solid rgba(255,255,255,0.18);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.02)
+    );
+  transform: scale(1.03);
+}
+
+.popular-tag {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  background: white;
+  color: black;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* CTA IMPROVEMENTS */
+
+.primary-btn,
+.secondary-btn,
+.nav-btn,
+.contact button,
+.price-card button {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    background 0.25s ease;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.nav-btn:hover,
+.contact button:hover,
+.price-card button:hover {
+  transform: translateY(-3px);
+}
+
+/* CONTACT SECTION */
+
+.contact p {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  color: #9d9d9d;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+/* REVIEW CARDS */
+
+.review-card {
+  transition: 0.3s;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255,255,255,0.14);
+}
+
+/* BETTER SECTION SPACING */
+
+.services,
+.reviews,
+.pricing {
+  position: relative;
+}
+
+.services::before,
+.reviews::before,
+.pricing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 7%;
+  width: 86%;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.08),
+      transparent
+    );
+}
+
+/* MOBILE */
+
+@media (max-width: 1150px) {
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-price {
+    transform: none;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-stats div {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .price-card {
+    padding: 38px 28px;
+  }
+
+  .hero-stats {
+    margin-top: 40px;
+  }
+
+  .hero-stats div {
+    padding: 20px;
+  }
+
+  .section-top h2 {
+    font-size: 2.7rem;
+  }
+
+  .project-info h3 {
+    font-size: 2.2rem;
+  }
+}
