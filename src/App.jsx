@@ -6,6 +6,8 @@ export default function App() {
 
       <div className="noise"></div>
 
+      {/* NAVBAR */}
+
       <header className="navbar">
 
         <div className="logo-wrap">
@@ -30,12 +32,12 @@ export default function App() {
         </nav>
 
         <a
-  href="https://wa.me/91YOURNUMBER"
-  target="_blank"
-  className="nav-btn"
->
-  Book Strategy Call
-</a>
+          href="https://wa.me/91YOURNUMBER"
+          target="_blank"
+          className="nav-btn"
+        >
+          Book Strategy Call
+        </a>
 
       </header>
 
@@ -63,22 +65,24 @@ export default function App() {
           </p>
 
           <div className="hero-buttons">
-<a href="#work" className="primary-btn">
-  View Live Demo
-</a>
-            
-           <a
-  href="https://wa.me/91YOURNUMBER"
-  target="_blank"
-  className="secondary-btn"
->
-  Chat on WhatsApp
-</a>
+
+            <a href="#work" className="primary-btn">
+              View Live Demo
+            </a>
+
+            <a
+              href="https://wa.me/91YOURNUMBER"
+              target="_blank"
+              className="secondary-btn"
+            >
+              Chat on WhatsApp
+            </a>
+
           </div>
 
           <div className="hero-price">
-           Starting from ₹9,999 • Premium           websites + lead systems
-</div>
+            Starting from ₹9,999 • Premium websites + lead systems
+          </div>
 
           <div className="hero-stats">
 
@@ -88,24 +92,22 @@ export default function App() {
             </div>
 
             <div>
-              <h3>Fast</h3>
-              <p>3-5 Day Delivery</p>
+              <h3>Smart</h3>
+              <p>Business Automation</p>
             </div>
 
             <div>
-              <h3>Smart</h3>
-              <p>Lead Systems Included</p>
+              <h3>Focused</h3>
+              <p>Lead Generation Systems</p>
             </div>
 
           </div>
 
         </div>
 
-        <div className="hero-gradient"></div>
-
       </section>
 
-      {/* PROBLEM SOLUTION */}
+      {/* STATEMENT */}
 
       <section className="statement-section">
 
@@ -149,6 +151,25 @@ export default function App() {
               <div>WhatsApp CTA</div>
               <div>Premium UI</div>
               <div>Lead Focused</div>
+            </div>
+
+            <div className="project-results">
+
+              <div>
+                <h4>+42%</h4>
+                <p>More Enquiries</p>
+              </div>
+
+              <div>
+                <h4>24/7</h4>
+                <p>Lead Capture</p>
+              </div>
+
+              <div>
+                <h4>Mobile</h4>
+                <p>Optimized</p>
+              </div>
+
             </div>
 
             <a
@@ -245,6 +266,8 @@ export default function App() {
 
             <h3>Starter</h3>
 
+            <p className="package-price">₹9,999</p>
+
             <h4>Perfect For Small Businesses</h4>
 
             <ul>
@@ -254,12 +277,13 @@ export default function App() {
               <li>Lead Capture Form</li>
             </ul>
 
-           <a
-  href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Starter%20Package"
-  target="_blank"
->
-  Get Started
-</a> 
+            <a
+              href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Starter%20Package"
+              target="_blank"
+            >
+              Get Started
+            </a>
+
           </div>
 
           <div className="price-card featured-price">
@@ -270,6 +294,8 @@ export default function App() {
 
             <h3>Growth System</h3>
 
+            <p className="package-price">₹19,999</p>
+
             <h4>Best For Scaling Businesses</h4>
 
             <ul>
@@ -279,18 +305,20 @@ export default function App() {
               <li>Priority WhatsApp Setup</li>
             </ul>
 
-           <a
-  href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Starter%20Package"
-  target="_blank"
->
-  Get Started
-</a>
+            <a
+              href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Growth%20System"
+              target="_blank"
+            >
+              Get Started
+            </a>
 
           </div>
 
           <div className="price-card">
 
             <h3>Automation</h3>
+
+            <p className="package-price">₹34,999+</p>
 
             <h4>Advanced Conversion System</h4>
 
@@ -300,13 +328,54 @@ export default function App() {
               <li>Advanced Lead Flow</li>
               <li>Conversion Optimization</li>
             </ul>
-<a
-  href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Starter%20Package"
-  target="_blank"
->
-  Get Started
-</a>
-            
+
+            <a
+              href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Automation%20Package"
+              target="_blank"
+            >
+              Get Started
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* DASHBOARD */}
+
+      <section className="dashboard-preview">
+
+        <div className="section-top center">
+          <span>BUSINESS DASHBOARD</span>
+          <h2>Track Leads & Enquiries</h2>
+        </div>
+
+        <div className="dashboard-box">
+
+          <div className="dashboard-top">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div className="dashboard-content">
+
+            <div className="dashboard-card">
+              <h3>24</h3>
+              <p>New Leads</p>
+            </div>
+
+            <div className="dashboard-card">
+              <h3>89%</h3>
+              <p>Reply Rate</p>
+            </div>
+
+            <div className="dashboard-card">
+              <h3>12</h3>
+              <p>Bookings</p>
+            </div>
+
           </div>
 
         </div>
@@ -374,14 +443,25 @@ export default function App() {
           all designed to help your business convert better online.
         </p>
 
-       <a
-  href="https://wa.me/91YOURNUMBER?text=Hi%20I%20want%20to%20start%20a%20project"
-  target="_blank"
-  className="contact-btn"
->
-  Start Your Project
-</a>
+        <a
+          href="https://wa.me/91YOURNUMBER?text=Hi%20I%20want%20to%20start%20a%20project"
+          target="_blank"
+          className="contact-btn"
+        >
+          Start Your Project
+        </a>
+
       </section>
+
+      {/* FLOATING WHATSAPP */}
+
+      <a
+        href="https://wa.me/91YOURNUMBER"
+        target="_blank"
+        className="floating-whatsapp"
+      >
+        WhatsApp
+      </a>
 
     </div>
   )
