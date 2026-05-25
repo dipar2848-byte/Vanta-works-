@@ -5,64 +5,73 @@ export default function LeadForm() {
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
-  e.preventDefault()
-  setLoading(true)
+    e.preventDefault()
+    setLoading(true)
 
-  const form = new FormData(e.target)
+    const form = new FormData(e.target)
 
-  const lead = {
-    name: form.get("name"),
-    business: form.get("business"),
-    email: form.get("email"),
-    phone: form.get("phone"),
-    message: form.get("message"),
+    const lead = {
+      name: form.get("name"),
+      business: form.get("business"),
+      email: form.get("email"),
+      phone: form.get("phone"),
+      message: form.get("message"),
+    }
+
+    console.log("SENDING LEAD:", lead)
+
+    const { data, error } = await supabase
+      .from("leads")
+      .insert([lead])
+      .select()
+
+    console.log("SUPABASE DATA:", data)
+    console.log("SUPABASE ERROR:", error)
+
+    setLoading(false)
+
+    if (error) {
+      alert(error.message)
+      return
+    }
+
+    alert("Lead submitted successfully!")
+    e.target.reset()
   }
-
-  console.log("SENDING LEAD:", lead)
-
-  const { data, error } = await supabase.from("leads").insert([lead])
-
-  console.log("DATA:", data)
-  console.log("ERROR:", error)
-
-  setLoading(false)
-
-  if (error) {
-    alert(JSON.stringify(error, null, 2))
-    return
-  }
-
-  alert("SUCCESS")
-  e.target.reset()
-}
-
-    const { data, error } = await supabase.from("leads").insert([lead])
-
-console.log("DATA:", data)
-console.log("ERROR:", error)
-
-setLoading(false)
-
-if (error) {
-  alert(error.message)
-  return
-}
-
-alert("Lead submitted successfully!")
-e.target.reset()
 
   return (
     <form className="lead-form" onSubmit={handleSubmit}>
+      
+      <input
+        name="name"
+        placeholder="Your Name"
+        required
+      />
 
-      <input name="name" placeholder="Your Name" required />
+      <input
+        name="business"
+        placeholder="Business Name"
+        required
+      />
 
-      <input name="business" placeholder="Business Name" required />
+      <input
+        name="email"
+        type="email"
+        placeholder="Email Address"
+        required
+      />
 
-      <input name="email" type="email" placeholder="Email Address" required />
+      <input
+        name="phone"
+        placeholder="Phone Number"
+        required
+      />
 
-      <input name="phone" placeholder="Phone Number" required />
-
-      <textarea name="message" placeholder="Tell us what you need..." required />
+      <textarea
+        name="message"
+        placeholder="Tell us what you need..."
+        required
+      />
 
       <button type="submit" disabled={loading}>
         {loading ? "Sending..." : "Get Free Strategy Plan"}
