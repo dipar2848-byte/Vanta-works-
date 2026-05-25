@@ -345,6 +345,7 @@ export default function App() {
   .lead-info h3 {
     font-size: 1.8rem;
   }
+</section>
 
 }
       {/* PACKAGES */}
