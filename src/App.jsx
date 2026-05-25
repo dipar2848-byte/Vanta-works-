@@ -251,7 +251,8 @@ export default function App() {
 
       </section>
 
-<section className="lead-section">
+
+        <section className="lead-section">
 
   <div className="section-top center">
     <span>GET A FREE STRATEGY PLAN</span>
@@ -263,15 +264,14 @@ export default function App() {
     <div className="lead-info">
 
       <h3>
-        We build systems that help businesses generate more enquiries,
-        bookings, and customers online.
+        We build systems that turn visitors into paying customers using automation, booking flows, and lead funnels.
       </h3>
 
       <div className="lead-points">
         <div>✓ Premium Website</div>
         <div>✓ WhatsApp Integration</div>
         <div>✓ Booking System</div>
-        <div>✓ AI Automation</div>
+        <div>✓ Lead Automation</div>
       </div>
 
     </div>
@@ -282,24 +282,35 @@ export default function App() {
       method="POST"
     >
 
+      {/* EMAIL SUBJECT */}
       <input
         type="hidden"
         name="_subject"
-        value="New Vanta Works Lead"
+        value="🔥 New Lead from VantaWorks Website"
       />
 
+      {/* DISABLE CAPTCHA */}
       <input
         type="hidden"
         name="_captcha"
         value="false"
       />
 
+      {/* REDIRECT AFTER SUBMIT */}
       <input
         type="hidden"
         name="_next"
-        value="https://YOURSITE.vercel.app"
+        value="https://your-live-site.vercel.app"
       />
 
+      {/* AUTO REPLY EMAIL (AUTOMATION CORE) */}
+      <input
+        type="hidden"
+        name="_autoresponse"
+        value="Hi! Thanks for reaching out to VantaWorks. We’ve received your request and will contact you within 24 hours. — Team VantaWorks"
+      />
+
+      {/* FORM FIELDS */}
       <input
         type="text"
         name="name"
@@ -315,6 +326,13 @@ export default function App() {
       />
 
       <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        required
+      />
+
+      <input
         type="tel"
         name="phone"
         placeholder="Phone Number"
@@ -325,6 +343,7 @@ export default function App() {
         name="message"
         placeholder="Tell us what you need..."
         rows="5"
+        required
       ></textarea>
 
       <button type="submit">
@@ -337,7 +356,7 @@ export default function App() {
 
 </section>
 
-}
+
       {/* PACKAGES */}
 
       <section className="pricing" id="pricing">
