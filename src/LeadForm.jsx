@@ -18,24 +18,32 @@ export default function LeadForm() {
       message: form.get("message"),
     }
 
-    console.log("SENDING LEAD:", lead)
-
-    const { data, error } = await supabase
+    // 1. SAVE TO SUPABASE
+    const { error } = await supabase
       .from("leads")
       .insert([lead])
-      .select()
-
-    console.log("SUPABASE DATA:", data)
-    console.log("SUPABASE ERROR:", error)
-
-    setLoading(false)
 
     if (error) {
+      setLoading(false)
       alert(error.message)
       return
     }
 
-    alert("Lead submitted successfully!")
+    // 2. SEND EMAIL NOTIFICATION + AUTO REPLY
+    try {
+      await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ lead }),
+      })
+    } catch (err) {
+      console.log("Email error:", err)
+    }
+
+    setLoading(false)
+    alert("Submitted successfully!")
     e.target.reset()
   }
 
