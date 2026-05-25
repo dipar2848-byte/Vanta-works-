@@ -250,7 +250,103 @@ export default function App() {
         </div>
 
       </section>
+.lead-section {
+  padding: 140px 7%;
+  position: relative;
+}
 
+.lead-container {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.lead-info,
+.lead-form {
+  background: #0b0b0b;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 30px;
+  padding: 50px;
+}
+
+.lead-info h3 {
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 40px;
+}
+
+.lead-points {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.lead-points div {
+  color: #cfcfcf;
+  font-size: 1rem;
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.lead-form input,
+.lead-form textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 18px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.lead-form textarea {
+  resize: none;
+}
+
+.lead-form input:focus,
+.lead-form textarea:focus {
+  border-color: rgba(255,255,255,0.2);
+}
+
+.lead-form button {
+  padding: 18px;
+  border-radius: 16px;
+  border: none;
+  background: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.lead-form button:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 950px) {
+
+  .lead-container {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-info,
+  .lead-form {
+    padding: 34px;
+  }
+
+  .lead-info h3 {
+    font-size: 1.8rem;
+  }
+
+}
       {/* PACKAGES */}
 
       <section className="pricing" id="pricing">
