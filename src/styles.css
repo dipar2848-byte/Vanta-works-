@@ -802,6 +802,11 @@ nav a:hover {
   .hero-buttons {
     flex-direction: column;
   }
+.hero-buttons .primary-btn,
+.hero-buttons .secondary-btn {
+  width: 100%;
+  max-width: 320px;
+}
 
   .project-preview {
     height: 500px;
