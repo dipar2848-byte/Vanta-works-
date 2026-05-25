@@ -18,17 +18,20 @@ export default function LeadForm() {
       message: form.get("message"),
     }
 
-    const { error } = await supabase.from("leads").insert([lead])
+    const { data, error } = await supabase.from("leads").insert([lead])
 
-    setLoading(false)
+console.log("DATA:", data)
+console.log("ERROR:", error)
 
-    if (!error) {
-      alert("Lead submitted successfully!")
-      e.target.reset()
-    } else {
-      alert("Something went wrong. Try again.")
-    }
-  }
+setLoading(false)
+
+if (error) {
+  alert(error.message)
+  return
+}
+
+alert("Lead submitted successfully!")
+e.target.reset()
 
   return (
     <form className="lead-form" onSubmit={handleSubmit}>
