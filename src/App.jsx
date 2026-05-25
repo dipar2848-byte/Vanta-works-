@@ -276,81 +276,8 @@ export default function App() {
 
     </div>
 
-    <form
-      className="lead-form"
-      action="https://formsubmit.co/YOURGMAIL@gmail.com"
-      method="POST"
-    >
-
-      {/* EMAIL SUBJECT */}
-      <input
-        type="hidden"
-        name="_subject"
-        value="🔥 New Lead from VantaWorks Website"
-      />
-
-      {/* DISABLE CAPTCHA */}
-      <input
-        type="hidden"
-        name="_captcha"
-        value="false"
-      />
-
-      {/* REDIRECT AFTER SUBMIT */}
-      <input
-        type="hidden"
-        name="_next"
-        value="https://your-live-site.vercel.app"
-      />
-
-      {/* AUTO REPLY EMAIL (AUTOMATION CORE) */}
-      <input
-        type="hidden"
-        name="_autoresponse"
-        value="Hi! Thanks for reaching out to VantaWorks. We’ve received your request and will contact you within 24 hours. — Team VantaWorks"
-      />
-
-      {/* FORM FIELDS */}
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        required
-      />
-
-      <input
-        type="text"
-        name="business"
-        placeholder="Business Name"
-        required
-      />
-
-      <input
-        type="email"
-        name="email"
-        placeholder="Email Address"
-        required
-      />
-
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Phone Number"
-        required
-      />
-
-      <textarea
-        name="message"
-        placeholder="Tell us what you need..."
-        rows="5"
-        required
-      ></textarea>
-
-      <button type="submit">
-        Get Free Strategy Plan
-      </button>
-
-    </form>
+   
+        <LeadForm />
 
   </div>
 
