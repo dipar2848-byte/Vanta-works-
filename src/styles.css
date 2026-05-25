@@ -807,7 +807,14 @@ nav a:hover {
   width: 100%;
   max-width: 320px;
 }
-
+.nav-btn {
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  border-radius: 18px;
+  white-space: nowrap;
+  width: auto;
+  flex-shrink: 0;
+}
   .project-preview {
     height: 500px;
   }
