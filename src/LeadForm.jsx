@@ -5,18 +5,36 @@ export default function LeadForm() {
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
+  e.preventDefault()
+  setLoading(true)
 
-    const form = new FormData(e.target)
+  const form = new FormData(e.target)
 
-    const lead = {
-      name: form.get("name"),
-      business: form.get("business"),
-      email: form.get("email"),
-      phone: form.get("phone"),
-      message: form.get("message"),
-    }
+  const lead = {
+    name: form.get("name"),
+    business: form.get("business"),
+    email: form.get("email"),
+    phone: form.get("phone"),
+    message: form.get("message"),
+  }
+
+  console.log("SENDING LEAD:", lead)
+
+  const { data, error } = await supabase.from("leads").insert([lead])
+
+  console.log("DATA:", data)
+  console.log("ERROR:", error)
+
+  setLoading(false)
+
+  if (error) {
+    alert(JSON.stringify(error, null, 2))
+    return
+  }
+
+  alert("SUCCESS")
+  e.target.reset()
+}
 
     const { data, error } = await supabase.from("leads").insert([lead])
 
