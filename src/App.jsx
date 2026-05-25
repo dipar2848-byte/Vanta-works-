@@ -250,101 +250,91 @@ export default function App() {
         </div>
 
       </section>
-.lead-section {
-  padding: 140px 7%;
-  position: relative;
-}
 
-.lead-container {
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: stretch;
-}
+<section className="lead-section">
 
-.lead-info,
-.lead-form {
-  background: #0b0b0b;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 30px;
-  padding: 50px;
-}
+  <div className="section-top center">
+    <span>GET A FREE STRATEGY PLAN</span>
+    <h2>Tell Us About Your Business</h2>
+  </div>
 
-.lead-info h3 {
-  font-size: 2.2rem;
-  line-height: 1.3;
-  margin-bottom: 40px;
-}
+  <div className="lead-container">
 
-.lead-points {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+    <div className="lead-info">
 
-.lead-points div {
-  color: #cfcfcf;
-  font-size: 1rem;
-}
+      <h3>
+        We build systems that help businesses generate more enquiries,
+        bookings, and customers online.
+      </h3>
 
-.lead-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+      <div className="lead-points">
+        <div>✓ Premium Website</div>
+        <div>✓ WhatsApp Integration</div>
+        <div>✓ Booking System</div>
+        <div>✓ AI Automation</div>
+      </div>
 
-.lead-form input,
-.lead-form textarea {
-  width: 100%;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 18px;
-  color: white;
-  font-size: 1rem;
-  outline: none;
-}
+    </div>
 
-.lead-form textarea {
-  resize: none;
-}
+    <form
+      className="lead-form"
+      action="https://formsubmit.co/YOURGMAIL@gmail.com"
+      method="POST"
+    >
 
-.lead-form input:focus,
-.lead-form textarea:focus {
-  border-color: rgba(255,255,255,0.2);
-}
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Vanta Works Lead"
+      />
 
-.lead-form button {
-  padding: 18px;
-  border-radius: 16px;
-  border: none;
-  background: white;
-  color: black;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.25s;
-}
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+      />
 
-.lead-form button:hover {
-  transform: translateY(-3px);
-}
+      <input
+        type="hidden"
+        name="_next"
+        value="https://YOURSITE.vercel.app"
+      />
 
-@media (max-width: 950px) {
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+      />
 
-  .lead-container {
-    grid-template-columns: 1fr;
-  }
+      <input
+        type="text"
+        name="business"
+        placeholder="Business Name"
+        required
+      />
 
-  .lead-info,
-  .lead-form {
-    padding: 34px;
-  }
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number"
+        required
+      />
 
-  .lead-info h3 {
-    font-size: 1.8rem;
-  }
+      <textarea
+        name="message"
+        placeholder="Tell us what you need..."
+        rows="5"
+      ></textarea>
+
+      <button type="submit">
+        Get Free Strategy Plan
+      </button>
+
+    </form>
+
+  </div>
+
 </section>
 
 }
