@@ -1,4 +1,4 @@
-import './styles.css'
+import './styles.css'import LeadForm from "./LeadForm"
 
 export default function App() {
   return (
