@@ -38,12 +38,12 @@ const openCalendly = () => {
         </nav>
 
         <a
-          href="https://wa.me/91YOURNUMBER"
-          target="_blank"
-          className="nav-btn"
-        >
-          Book Strategy Call
-        </a>
+  href="#"
+  onClick={openCalendly}
+  className="nav-btn"
+>
+  Start Strategy Session
+</a>
 
       </header>
 
