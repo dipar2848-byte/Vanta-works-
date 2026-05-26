@@ -222,8 +222,7 @@ export default function Home() {
         </div>
 
       </section>
-
-      <section className="pricing" id="pricing">
+<section className="pricing" id="pricing">
 
   <div className="section-top center">
     <span>PACKAGES</span>
@@ -235,19 +234,22 @@ export default function Home() {
     {/* STARTER */}
     <div className="price-card">
 
-      <h3>Starter</h3>
+      <h3>Starter Website</h3>
       <p className="package-price">₹9,999</p>
-      <h4>Perfect For Small Businesses</h4>
+      <h4>High-converting business website</h4>
 
       <ul>
-        <li>Premium Website</li>
-        <li>WhatsApp Integration</li>
-        <li>Mobile Optimization</li>
-        <li>Lead Capture Form</li>
+        <li>Modern responsive website (mobile-first)</li>
+        <li>Premium UI/UX design</li>
+        <li>WhatsApp click-to-chat integration</li>
+        <li>Contact / lead form (Web3Forms)</li>
+        <li>Email delivery of enquiries (via Web3Forms)</li>
+        <li>Basic SEO setup</li>
+        <li>Fast deployment (live website)</li>
       </ul>
 
       <a
-        href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Starter%20Package"
+        href="https://wa.me/91YOURNUMBER?text=I%20want%20the%20Starter%20Website%20Package"
         target="_blank"
       >
         Get Started
@@ -255,24 +257,28 @@ export default function Home() {
 
     </div>
 
-    {/* GROWTH */}
+    {/* GROWTH SYSTEM */}
     <div className="price-card featured-price">
 
       <div className="popular-tag">MOST POPULAR</div>
 
       <h3>Growth System</h3>
       <p className="package-price">₹19,999</p>
-      <h4>Best For Scaling Businesses</h4>
+      <h4>Complete lead management system</h4>
 
       <ul>
-        <li>Everything In Starter</li>
-        <li>Booking System</li>
-        <li>Lead Dashboard</li>
-        <li>Lead Status Tracking</li>
+        <li>Everything in Starter Package</li>
+        <li>Supabase CRM database (lead storage)</li>
+        <li>Admin dashboard (SaaS-style interface)</li>
+        <li>Lead management system (search / delete / view)</li>
+        <li>Lead tracking foundation (CRM structure)</li>
+        <li>Booking system integration (Calendly)</li>
+        <li>Custom email automation (advanced workflows)</li>
+        <li>Conversion-focused UI dashboard</li>
       </ul>
 
       <a
-        href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Growth%20System"
+        href="https://wa.me/91YOURNUMBER?text=I%20want%20the%20Growth%20System%20Package"
         target="_blank"
       >
         Get Started
@@ -283,19 +289,22 @@ export default function Home() {
     {/* AUTOMATION */}
     <div className="price-card">
 
-      <h3>Automation</h3>
+      <h3>Automation System</h3>
       <p className="package-price">₹34,999+</p>
-      <h4>Advanced Conversion System</h4>
+      <h4>Advanced business automation engine</h4>
 
       <ul>
-        <li>AI Chatbot</li>
-        <li>Automated Follow-Ups</li>
-        <li>Advanced Lead Flow</li>
-        <li>Conversion Optimization</li>
+        <li>Everything in Growth System</li>
+        <li>AI chatbot integration</li>
+        <li>Automated follow-up sequences (email / WhatsApp)</li>
+        <li>Advanced lead scoring system</li>
+        <li>Conversion tracking & analytics</li>
+        <li>Workflow automation system</li>
+        <li>Performance optimization layer</li>
       </ul>
 
       <a
-        href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Automation%20Package"
+        href="https://wa.me/91YOURNUMBER?text=I%20want%20the%20Automation%20System%20Package"
         target="_blank"
       >
         Get Started
@@ -306,7 +315,8 @@ export default function Home() {
   </div>
 
 </section>
-      {/* DASHBOARD PREVIEW */}
+
+          {/* DASHBOARD PREVIEW */}
       <section className="dashboard-preview">
 
         <div className="section-top center">
