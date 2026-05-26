@@ -3,7 +3,7 @@ import LeadForm from "../LeadForm"
 export default function Home() {
 const openCalendly = () => {
   window.Calendly.initPopupWidget({
-    url: "https://calendly.com/vantaworkss/30min",
+    url: "https://calendly.com/vantaworkss/30min"
   });
 
   return false;
