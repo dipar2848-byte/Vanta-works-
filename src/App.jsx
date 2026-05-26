@@ -1,5 +1,8 @@
 import './styles.css'
 import LeadForm from "./LeadForm"
+import AdminLogin from './admin/AdminLogin'
+import AdminDashboard from './admin/AdminDashboard'
+import ProtectedRoute from './admin/ProtectedRoute'
 
 export default function App() {
   return (
