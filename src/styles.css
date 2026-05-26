@@ -1068,3 +1068,153 @@ nav a:hover {
   padding: 10px;
   border-bottom: 1px solid #222;
 }
+.crm {
+  display: flex;
+  min-height: 100vh;
+  background: #07070a;
+  color: #eaeaea;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* SIDEBAR */
+.crm-sidebar {
+  width: 260px;
+  background: #0d0d12;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-box {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #6c5ce7, #00d4ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.crm-sidebar h2 {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.crm-sidebar p {
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.crm-sidebar nav {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.crm-sidebar button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #bbb;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.crm-sidebar button:hover {
+  border-color: #6c5ce7;
+  color: white;
+}
+
+.crm-sidebar .active {
+  background: rgba(108,92,231,0.15);
+  border-color: #6c5ce7;
+  color: white;
+}
+
+/* MAIN */
+.crm-main {
+  flex: 1;
+  padding: 30px;
+}
+
+.crm-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.crm-topbar h1 {
+  font-size: 22px;
+}
+
+.crm-topbar input {
+  background: #0d0d12;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 14px;
+  color: white;
+  outline: none;
+  width: 260px;
+}
+
+/* LEADS */
+.crm-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.crm-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d0d12;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 16px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.crm-card:hover {
+  border-color: rgba(108,92,231,0.5);
+  transform: translateY(-2px);
+}
+
+.crm-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.crm-card p {
+  margin: 4px 0;
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+.crm-card span {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.crm-card button {
+  background: transparent;
+  border: 1px solid rgba(255,80,80,0.4);
+  color: #ff6b6b;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.muted {
+  opacity: 0.5;
+}
