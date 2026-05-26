@@ -13,74 +13,77 @@ export default function AdminDashboard() {
   async function fetchLeads() {
     setLoading(true)
 
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from("leads")
       .select("*")
       .order("created_at", { ascending: false })
 
-    if (!error) {
-      setLeads(data || [])
-    } else {
-      console.error("Error fetching leads:", error.message)
-    }
-
+    setLeads(data || [])
     setLoading(false)
   }
 
-  const filteredLeads = leads.filter((lead) => {
-    const query = search.toLowerCase()
+  const filtered = leads.filter((l) => {
+    const q = search.toLowerCase()
     return (
-      lead.name?.toLowerCase().includes(query) ||
-      lead.email?.toLowerCase().includes(query) ||
-      lead.business?.toLowerCase().includes(query) ||
-      lead.phone?.toLowerCase().includes(query)
+      l.name?.toLowerCase().includes(q) ||
+      l.email?.toLowerCase().includes(q) ||
+      l.phone?.toLowerCase().includes(q) ||
+      l.business?.toLowerCase().includes(q)
     )
   })
 
-  async function deleteLead(id) {
-    await supabase.from("leads").delete().eq("id", id)
-    fetchLeads()
-  }
-
   return (
-    <div className="admin">
-      <div className="admin-header">
-        <h1>Admin Dashboard</h1>
+    <div className="crm">
+      
+      {/* TOP BAR */}
+      <div className="crm-topbar">
+        <h2>Leads Dashboard</h2>
 
         <input
-          type="text"
           placeholder="Search leads..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
 
-      {loading ? (
-        <p>Loading leads...</p>
-      ) : filteredLeads.length === 0 ? (
-        <p>No leads found.</p>
-      ) : (
-        <div className="leads-grid">
-          {filteredLeads.map((lead) => (
-            <div className="lead-card" key={lead.id}>
-              <h3>{lead.name}</h3>
-              <p><b>Business:</b> {lead.business}</p>
-              <p><b>Email:</b> {lead.email}</p>
-              <p><b>Phone:</b> {lead.phone}</p>
-              <p><b>Message:</b> {lead.message}</p>
-              <p className="timestamp">
-                {lead.created_at
-                  ? new Date(lead.created_at).toLocaleString()
-                  : ""}
-              </p>
+      {/* CONTENT */}
+      <div className="crm-content">
 
-              <button onClick={() => deleteLead(lead.id)}>
-                Delete
-              </button>
+        {loading ? (
+          <div className="crm-state">Loading leads...</div>
+        ) : filtered.length === 0 ? (
+          <div className="crm-state">No leads found</div>
+        ) : (
+          <div className="crm-table">
+
+            <div className="crm-header">
+              <span>Name</span>
+              <span>Business</span>
+              <span>Email</span>
+              <span>Phone</span>
+              <span>Message</span>
+              <span>Date</span>
             </div>
-          ))}
-        </div>
-      )}
+
+            {filtered.map((l) => (
+              <div className="crm-row" key={l.id}>
+                <span>{l.name}</span>
+                <span>{l.business}</span>
+                <span>{l.email}</span>
+                <span>{l.phone}</span>
+                <span>{l.message}</span>
+                <span>
+                  {l.created_at
+                    ? new Date(l.created_at).toLocaleDateString()
+                    : ""}
+                </span>
+              </div>
+            ))}
+
+          </div>
+        )}
+
+      </div>
     </div>
   )
 }
