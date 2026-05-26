@@ -381,12 +381,12 @@ const openCalendly = () => {
         <h2>Build a System That Brings Customers</h2>
 
         <a
-          href="https://wa.me/91YOURNUMBER"
-          target="_blank"
-          className="contact-btn"
-        >
-          Start Your Project
-        </a>
+  href="#"
+  onClick={openCalendly}
+  className="contact-btn"
+>
+  Launch My Growth System
+</a>
 
       </section>
 
