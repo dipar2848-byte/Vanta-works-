@@ -947,3 +947,47 @@ nav a:hover {
   }
 
 }
+.crm {
+  padding: 40px;
+  color: white;
+}
+
+.crm-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.crm-topbar input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 250px;
+}
+
+.crm-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.crm-header, .crm-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr 2fr 1fr;
+  gap: 10px;
+  padding: 12px;
+}
+
+.crm-header {
+  font-weight: bold;
+  border-bottom: 1px solid #333;
+}
+
+.crm-row {
+  border-bottom: 1px solid #222;
+}
+
+.crm-state {
+  padding: 40px;
+  opacity: 0.7;
+}
