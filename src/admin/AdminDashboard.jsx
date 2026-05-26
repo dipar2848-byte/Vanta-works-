@@ -12,6 +12,7 @@ export default function AdminDashboard() {
 
   async function fetchLeads() {
     setLoading(true);
+
     const { data } = await supabase
       .from("leads")
       .select("*")
@@ -26,23 +27,24 @@ export default function AdminDashboard() {
     fetchLeads();
   }
 
-  const filteredLeads = leads.filter((lead) =>
-    (lead.name + lead.email + lead.message)
+  const filtered = leads.filter((l) =>
+    (l.name + l.email + l.message)
       .toLowerCase()
       .includes(search.toLowerCase())
   );
 
-  const stats = {
-    total: leads.length,
-    new: leads.filter(l => !l.status || l.status === "new").length,
-  };
-
   return (
-    <div className="admin-layout">
+    <div className="crm">
 
       {/* SIDEBAR */}
-      <aside className="sidebar">
-        <h2>VantaWorks CRM</h2>
+      <aside className="crm-sidebar">
+        <div className="brand">
+          <div className="logo-box">VW</div>
+          <div>
+            <h2>VANTA</h2>
+            <p>WORKS CRM</p>
+          </div>
+        </div>
 
         <nav>
           <button className="active">Dashboard</button>
@@ -57,10 +59,10 @@ export default function AdminDashboard() {
       </aside>
 
       {/* MAIN */}
-      <main className="admin-main">
+      <main className="crm-main">
 
         {/* TOP BAR */}
-        <div className="topbar">
+        <div className="crm-topbar">
           <h1>Dashboard</h1>
 
           <input
@@ -70,60 +72,32 @@ export default function AdminDashboard() {
           />
         </div>
 
-        {/* STATS */}
-        <div className="stats-grid">
-
-          <div className="stat-card">
-            <h3>{stats.total}</h3>
-            <p>Total Leads</p>
-          </div>
-
-          <div className="stat-card">
-            <h3>{stats.new}</h3>
-            <p>New Leads</p>
-          </div>
-
-          <div className="stat-card">
-            <h3>--</h3>
-            <p>Bookings</p>
-          </div>
-
-        </div>
-
-        {/* CONTENT */}
-        <div className="card">
-
-          <h2>Recent Leads</h2>
+        {/* LEAD LIST */}
+        <section className="crm-section">
 
           {loading ? (
-            <p>Loading leads...</p>
-          ) : filteredLeads.length === 0 ? (
-            <p>No leads found.</p>
+            <div className="muted">Loading system data...</div>
+          ) : filtered.length === 0 ? (
+            <div className="muted">No leads found.</div>
           ) : (
-            <div className="lead-list">
+            filtered.map((lead) => (
+              <div key={lead.id} className="crm-card">
 
-              {filteredLeads.map((lead) => (
-                <div key={lead.id} className="lead-card">
-
-                  <div className="lead-info">
-                    <h3>{lead.name}</h3>
-                    <p>{lead.email}</p>
-                    <span>{lead.message}</span>
-                  </div>
-
-                  <div className="lead-actions">
-                    <button onClick={() => deleteLead(lead.id)}>
-                      Delete
-                    </button>
-                  </div>
-
+                <div>
+                  <h3>{lead.name}</h3>
+                  <p>{lead.email}</p>
+                  <span>{lead.message}</span>
                 </div>
-              ))}
 
-            </div>
+                <button onClick={() => deleteLead(lead.id)}>
+                  Delete
+                </button>
+
+              </div>
+            ))
           )}
 
-        </div>
+        </section>
 
       </main>
     </div>
