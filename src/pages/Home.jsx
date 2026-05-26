@@ -1,6 +1,13 @@
 import LeadForm from "../LeadForm"
 
 export default function Home() {
+const openCalendly = () => {
+  window.Calendly.initPopupWidget({
+    url: "PASTE-YOUR-CALENDLY-LINK",
+  });
+
+  return false;
+};
   return (
     <div className="site">
 
