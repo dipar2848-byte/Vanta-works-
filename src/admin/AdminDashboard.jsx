@@ -1,54 +1,86 @@
-import { useEffect, useState } from 'react'
-import { supabase } from '../supabaseClient'
+import { useEffect, useState } from "react"
+import { supabase } from "../supabaseClient"
 
 export default function AdminDashboard() {
   const [leads, setLeads] = useState([])
-  const [search, setSearch] = useState('')
-
-  const fetchLeads = async () => {
-    const { data } = await supabase
-      .from('leads')
-      .select('*')
-      .order('created_at', { ascending: false })
-
-    setLeads(data || [])
-  }
+  const [search, setSearch] = useState("")
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetchLeads()
   }, [])
 
-  const deleteLead = async (id) => {
-    await supabase.from('leads').delete().eq('id', id)
+  async function fetchLeads() {
+    setLoading(true)
+
+    const { data, error } = await supabase
+      .from("leads")
+      .select("*")
+      .order("created_at", { ascending: false })
+
+    if (!error) {
+      setLeads(data || [])
+    } else {
+      console.error("Error fetching leads:", error.message)
+    }
+
+    setLoading(false)
+  }
+
+  const filteredLeads = leads.filter((lead) => {
+    const query = search.toLowerCase()
+    return (
+      lead.name?.toLowerCase().includes(query) ||
+      lead.email?.toLowerCase().includes(query) ||
+      lead.business?.toLowerCase().includes(query) ||
+      lead.phone?.toLowerCase().includes(query)
+    )
+  })
+
+  async function deleteLead(id) {
+    await supabase.from("leads").delete().eq("id", id)
     fetchLeads()
   }
 
-  const filtered = leads.filter((l) =>
-    (l.name || '').toLowerCase().includes(search.toLowerCase()) ||
-    (l.email || '').toLowerCase().includes(search.toLowerCase()) ||
-    (l.business || '').toLowerCase().includes(search.toLowerCase())
-  )
-
   return (
-    <div style={{ padding: 20, background: '#0b0b0f', minHeight: '100vh' }}>
-      <h2 style={{ color: 'white' }}>Leads Dashboard</h2>
+    <div className="admin">
+      <div className="admin-header">
+        <h1>Admin Dashboard</h1>
 
-      <input
-        placeholder="Search leads..."
-        onChange={(e) => setSearch(e.target.value)}
-      />
-
-      <div>
-        {filtered.map((lead) => (
-          <div key={lead.id} style={{ margin: 10, padding: 10, background: '#151520', color: 'white' }}>
-            <div>{lead.name}</div>
-            <div>{lead.email}</div>
-            <div>{lead.business}</div>
-
-            <button onClick={() => deleteLead(lead.id)}>Delete</button>
-          </div>
-        ))}
+        <input
+          type="text"
+          placeholder="Search leads..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
       </div>
+
+      {loading ? (
+        <p>Loading leads...</p>
+      ) : filteredLeads.length === 0 ? (
+        <p>No leads found.</p>
+      ) : (
+        <div className="leads-grid">
+          {filteredLeads.map((lead) => (
+            <div className="lead-card" key={lead.id}>
+              <h3>{lead.name}</h3>
+              <p><b>Business:</b> {lead.business}</p>
+              <p><b>Email:</b> {lead.email}</p>
+              <p><b>Phone:</b> {lead.phone}</p>
+              <p><b>Message:</b> {lead.message}</p>
+              <p className="timestamp">
+                {lead.created_at
+                  ? new Date(lead.created_at).toLocaleString()
+                  : ""}
+              </p>
+
+              <button onClick={() => deleteLead(lead.id)}>
+                Delete
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
