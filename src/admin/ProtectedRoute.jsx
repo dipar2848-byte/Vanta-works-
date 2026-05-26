@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '../supabase'
+import { supabase } from '../supabaseClient'
 import { Navigate } from 'react-router-dom'
 
 export default function ProtectedRoute({ children }) {
