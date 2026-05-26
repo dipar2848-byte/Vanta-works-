@@ -1218,3 +1218,57 @@ nav a:hover {
 .muted {
   opacity: 0.5;
 }
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.kpi-card {
+  background: #0d0d12;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.kpi-card h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.kpi-card p {
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters select {
+  background: #0d0d12;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: white;
+  padding: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.actions select {
+  background: #0d0d12;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: white;
+  padding: 6px;
+}
+
+.status {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 6px;
+}
