@@ -223,35 +223,89 @@ export default function Home() {
 
       </section>
 
-      {/* PRICING */}
       <section className="pricing" id="pricing">
 
-        <div className="section-top center">
-          <span>PACKAGES</span>
-          <h2>Choose Your Growth System</h2>
-        </div>
+  <div className="section-top center">
+    <span>PACKAGES</span>
+    <h2>Choose Your Growth System</h2>
+  </div>
 
-        <div className="pricing-grid">
+  <div className="pricing-grid">
 
-          <div className="price-card">
-            <h3>Starter</h3>
-            <p>₹9,999</p>
-          </div>
+    {/* STARTER */}
+    <div className="price-card">
 
-          <div className="price-card featured-price">
-            <h3>Growth System</h3>
-            <p>₹19,999</p>
-          </div>
+      <h3>Starter</h3>
+      <p className="package-price">₹9,999</p>
+      <h4>Perfect For Small Businesses</h4>
 
-          <div className="price-card">
-            <h3>Automation</h3>
-            <p>₹34,999+</p>
-          </div>
+      <ul>
+        <li>Premium Website</li>
+        <li>WhatsApp Integration</li>
+        <li>Mobile Optimization</li>
+        <li>Lead Capture Form</li>
+      </ul>
 
-        </div>
+      <a
+        href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Starter%20Package"
+        target="_blank"
+      >
+        Get Started
+      </a>
 
-      </section>
+    </div>
 
+    {/* GROWTH */}
+    <div className="price-card featured-price">
+
+      <div className="popular-tag">MOST POPULAR</div>
+
+      <h3>Growth System</h3>
+      <p className="package-price">₹19,999</p>
+      <h4>Best For Scaling Businesses</h4>
+
+      <ul>
+        <li>Everything In Starter</li>
+        <li>Booking System</li>
+        <li>Lead Dashboard</li>
+        <li>Lead Status Tracking</li>
+      </ul>
+
+      <a
+        href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Growth%20System"
+        target="_blank"
+      >
+        Get Started
+      </a>
+
+    </div>
+
+    {/* AUTOMATION */}
+    <div className="price-card">
+
+      <h3>Automation</h3>
+      <p className="package-price">₹34,999+</p>
+      <h4>Advanced Conversion System</h4>
+
+      <ul>
+        <li>AI Chatbot</li>
+        <li>Automated Follow-Ups</li>
+        <li>Advanced Lead Flow</li>
+        <li>Conversion Optimization</li>
+      </ul>
+
+      <a
+        href="https://wa.me/91YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%20Automation%20Package"
+        target="_blank"
+      >
+        Get Started
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
       {/* DASHBOARD PREVIEW */}
       <section className="dashboard-preview">
 
