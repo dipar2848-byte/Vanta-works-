@@ -14,28 +14,40 @@ export default async function handler(req, res) {
   }
 
   try {
-    // EMAIL TO YOU
-    await resend.emails.send({
-      from: "VantaWorks <onboarding@resend.dev>",
-      to: "vantaworkss@gmail.com",
-      subject: "🔥 New Lead Received",
-      html: `
-        <h2>New Lead</h2>
-        <p><b>Name:</b> ${lead.name}</p>
-        <p><b>Business:</b> ${lead.business}</p>
-        <p><b>Email:</b> ${lead.email}</p>
-        <p><b>Phone:</b> ${lead.phone}</p>
-        <p><b>Message:</b> ${lead.message}</p>
-      `,
-    })
+    // 1. EMAIL TO YOU (ADMIN)
+    try {
+      await resend.emails.send({
+        from: "VantaWorks <onboarding@resend.dev>",
+        to: "vantaworkss@gmail.com",
+        subject: "🔥 New Lead Received",
+        html: `
+          <h2>New Lead</h2>
+          <p><b>Name:</b> ${lead.name}</p>
+          <p><b>Business:</b> ${lead.business}</p>
+          <p><b>Email:</b> ${lead.email}</p>
+          <p><b>Phone:</b> ${lead.phone}</p>
+          <p><b>Message:</b> ${lead.message}</p>
+        `,
+      })
+    } catch (err) {
+      console.log("Admin email failed:", err)
+    }
 
-    // AUTO REPLY
-    await resend.emails.send({
-      from: "VantaWorks <onboarding@resend.dev>",
-      to: lead.email,
-      subject: "We received your request ✔",
-      html: `<p>Thanks for contacting VantaWorks. We will get back to you soon.</p>`,
-    })
+    // 2. AUTO REPLY TO USER
+    try {
+      await resend.emails.send({
+        from: "VantaWorks <onboarding@resend.dev>",
+        to: lead.email,
+        subject: "We received your request ✔",
+        html: `
+          <p>Hi ${lead.name},</p>
+          <p>Thanks for contacting VantaWorks 🚀</p>
+          <p>We’ll get back to you shortly.</p>
+        `,
+      })
+    } catch (err) {
+      console.log("User email failed:", err)
+    }
 
     return res.status(200).json({ success: true })
   } catch (err) {
