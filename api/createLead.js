@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js"
 import { Resend } from "resend"
 
+// --- SERVICES (using env only) ---
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_ANON_KEY
@@ -20,31 +21,37 @@ export default async function handler(req, res) {
   }
 
   try {
-    // 1. SAVE TO SUPABASE
+    // 1. SAVE LEAD TO SUPABASE
     const { data, error } = await supabase
       .from("leads")
-      .insert([{
-        ...lead,
-        stage: "followup_sent",
-        whatsapp_sent: false,
-        email_sent: false,
-      }])
+      .insert([
+        {
+          name: lead.name,
+          business: lead.business,
+          email: lead.email,
+          phone: lead.phone,
+          message: lead.message,
+          stage: "followup_sent",
+          whatsapp_sent: false,
+          email_sent: false,
+        },
+      ])
       .select()
       .single()
 
     if (error) {
-      return res.status(500).json({ error })
+      return res.status(500).json({ error: error.message })
     }
 
     const leadId = data.id
 
-    // 2. WHATSAPP SEND (INTERAKT / API)
+    // 2. WHATSAPP NOTIFICATION
     try {
-      await fetch("https://YOUR-WHATSAPP-API-ENDPOINT", {
+      await fetch(process.env.WHATSAPP_API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer YOUR_API_KEY",
+          Authorization: `Bearer ${process.env.WHATSAPP_API_KEY}`,
         },
         body: JSON.stringify({
           to: lead.phone,
@@ -56,13 +63,13 @@ export default async function handler(req, res) {
         .from("leads")
         .update({ whatsapp_sent: true })
         .eq("id", leadId)
-
     } catch (err) {
-      console.log("WhatsApp error:", err)
+      console.log("WhatsApp error:", err.message)
     }
 
-    // 3. EMAIL (RESEND)
+    // 3. EMAIL NOTIFICATION (RESEND)
     try {
+      // admin email
       await resend.emails.send({
         from: "VantaWorks <onboarding@resend.dev>",
         to: "vantaworkss@gmail.com",
@@ -77,23 +84,27 @@ export default async function handler(req, res) {
         `,
       })
 
+      // user email
       await resend.emails.send({
         from: "VantaWorks <onboarding@resend.dev>",
         to: lead.email,
         subject: "We received your request ✔",
-        html: `<p>Thanks for contacting us. We’ll get back to you soon.</p>`,
+        html: `<p>Thanks for contacting us. We’ll get back to you soon 🚀</p>`,
       })
 
       await supabase
         .from("leads")
         .update({ email_sent: true })
         .eq("id", leadId)
-
     } catch (err) {
-      console.log("Email error:", err)
+      console.log("Email error:", err.message)
     }
 
-    return res.status(200).json({ success: true })
+    // 4. RESPONSE
+    return res.status(200).json({
+      success: true,
+      leadId,
+    })
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
