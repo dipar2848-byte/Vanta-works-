@@ -36,7 +36,7 @@ export default function LeadForm() {
 
     const leadId = data.id
 
-    // 2. WHATSAPP NOTIFICATION
+    // 2. WHATSAPP NOTIFICATION (NON-BLOCKING)
     const whatsappPromise = fetch("https://YOUR-WHATSAPP-API-ENDPOINT", {
       method: "POST",
       headers: {
@@ -49,7 +49,7 @@ export default function LeadForm() {
       }),
     }).catch((err) => console.log("WhatsApp error:", err))
 
-    // 3. EMAIL (RESEND VIA YOUR API)
+    // 3. EMAIL (RESEND API)
     const emailPromise = fetch("/api/sendEmail", {
       method: "POST",
       headers: {
@@ -58,10 +58,15 @@ export default function LeadForm() {
       body: JSON.stringify({ lead }),
     }).catch((err) => console.log("Email error:", err))
 
-    // Run both in parallel
-    await Promise.allSettled([whatsappPromise, emailPromise])
+    // Run both in parallel safely
+    const results = await Promise.allSettled([
+      whatsappPromise,
+      emailPromise,
+    ])
 
-    // 4. UPDATE CRM STATUS
+    console.log("Notification results:", results)
+
+    // 4. UPDATE CRM
     await supabase
       .from("leads")
       .update({
