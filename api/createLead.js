@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js"
 import { Resend } from "resend"
 
-// -------------------- SERVICES --------------------
+// ---------------- INIT ----------------
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_ANON_KEY
@@ -9,7 +9,7 @@ const supabase = createClient(
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-// -------------------- HANDLER --------------------
+// ---------------- MAIN HANDLER ----------------
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" })
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    // -------------------- 1. SAVE TO SUPABASE --------------------
+    // ---------------- 1. INSERT LEAD ----------------
     const { data, error } = await supabase
       .from("leads")
       .insert([
@@ -45,10 +45,11 @@ export default async function handler(req, res) {
     }
 
     const leadId = data.id
+    console.log("Lead created:", leadId)
 
-    // -------------------- 2. WHATSAPP (META CLOUD API) --------------------
+    // ---------------- 2. WHATSAPP (META CLOUD API) ----------------
     try {
-      await fetch(
+      const whatsappRes = await fetch(
         `https://graph.facebook.com/v20.0/${process.env.WHATSAPP_PHONE_NUMBER_ID}/messages`,
         {
           method: "POST",
@@ -61,25 +62,32 @@ export default async function handler(req, res) {
             to: lead.phone,
             type: "text",
             text: {
-              body: `Hi ${lead.name}, thanks for contacting us 🚀 We’ve received your request and will get back to you shortly.`,
+              body: `Hi ${lead.name}, thanks for contacting us 🚀 We’ll get back to you shortly.`,
             },
           }),
         }
       )
 
-      // mark whatsapp sent
-      await supabase
-        .from("leads")
-        .update({ whatsapp_sent: true })
-        .eq("id", leadId)
+      const whatsappData = await whatsappRes.json()
+      console.log("WhatsApp response:", whatsappData)
 
+      // mark CRM only if request succeeds
+      if (whatsappRes.ok) {
+        const { error: updateError } = await supabase
+          .from("leads")
+          .update({ whatsapp_sent: true })
+          .eq("id", leadId)
+
+        if (updateError) {
+          console.log("CRM update error:", updateError.message)
+        }
+      }
     } catch (err) {
-      console.log("WhatsApp error:", err.message)
+      console.log("WhatsApp failed:", err.message)
     }
 
-    // -------------------- 3. EMAIL (RESEND) --------------------
+    // ---------------- 3. EMAIL (RESEND) ----------------
     try {
-      // admin email
       await resend.emails.send({
         from: "VantaWorks <onboarding@resend.dev>",
         to: "vantaworkss@gmail.com",
@@ -94,30 +102,26 @@ export default async function handler(req, res) {
         `,
       })
 
-      // user email
       await resend.emails.send({
         from: "VantaWorks <onboarding@resend.dev>",
         to: lead.email,
         subject: "We received your request ✔",
-        html: `<p>Thanks for contacting us 🚀 We’ll get back to you soon.</p>`,
+        html: `<p>Thanks for contacting us 🚀</p>`,
       })
 
-      // mark email sent
       await supabase
         .from("leads")
         .update({ email_sent: true })
         .eq("id", leadId)
-
     } catch (err) {
       console.log("Email error:", err.message)
     }
 
-    // -------------------- RESPONSE --------------------
+    // ---------------- RESPONSE ----------------
     return res.status(200).json({
       success: true,
       leadId,
     })
-
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
