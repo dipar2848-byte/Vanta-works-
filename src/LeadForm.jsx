@@ -16,11 +16,12 @@ export default function LeadForm() {
       email: form.get("email"),
       phone: form.get("phone"),
       message: form.get("message"),
-      status: "New",
-      confirmation_sent: false,
+      stage: "followup_sent",
+      email_sent: false,
+      whatsapp_sent: false,
     }
 
-    // 1. SAVE TO SUPABASE
+    // 1. INSERT LEAD
     const { data, error } = await supabase
       .from("leads")
       .insert([lead])
@@ -28,7 +29,7 @@ export default function LeadForm() {
       .single()
 
     if (error) {
-      console.log("Supabase error:", error)
+      console.log("Supabase insert error:", error)
       setLoading(false)
       alert(error.message)
       return
@@ -47,32 +48,37 @@ export default function LeadForm() {
         to: lead.phone,
         message: `Hi ${lead.name}, thanks for contacting VantaWorks 🚀 We’ve received your request and will get back to you shortly.`,
       }),
-    }).catch((err) => console.log("WhatsApp error:", err))
+    })
+      .then(async () => {
+        const { error } = await supabase
+          .from("leads")
+          .update({ whatsapp_sent: true })
+          .eq("id", leadId)
 
-    // 3. EMAIL (RESEND API)
+        if (error) console.log("WhatsApp CRM update error:", error)
+      })
+      .catch((err) => console.log("WhatsApp API error:", err))
+
+    // 3. EMAIL NOTIFICATION (RESEND)
     const emailPromise = fetch("/api/sendEmail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ lead }),
-    }).catch((err) => console.log("Email error:", err))
+    })
+      .then(async () => {
+        const { error } = await supabase
+          .from("leads")
+          .update({ email_sent: true })
+          .eq("id", leadId)
 
-    // Run both in parallel safely
-    const results = await Promise.allSettled([
-      whatsappPromise,
-      emailPromise,
-    ])
-
-    console.log("Notification results:", results)
-
-    // 4. UPDATE CRM
-    await supabase
-      .from("leads")
-      .update({
-        confirmation_sent: true,
+        if (error) console.log("Email CRM update error:", error)
       })
-      .eq("id", leadId)
+      .catch((err) => console.log("Email API error:", err))
+
+    // 4. RUN BOTH
+    await Promise.allSettled([whatsappPromise, emailPromise])
 
     setLoading(false)
     alert("Submitted successfully!")
