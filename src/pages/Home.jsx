@@ -110,7 +110,7 @@ export default function Home() {
       </section>
 
       {/* ================= STATEMENT ================= */}
-    <section className="statement-section">
+  <section className="statement-section">
   <span>WHY BUSINESSES LOSE CUSTOMERS</span>
 
   <h2>
@@ -123,11 +123,11 @@ export default function Home() {
     We solve this using structured systems:
   </p>
 
-  <ul className="statement-list">
-    <li>Landing pages that convert traffic</li>
-    <li>Automated WhatsApp follow-ups</li>
-    <li>CRM-based lead tracking</li>
-  </ul>
+  <div className="statement-list">
+    <div className="statement-item">- Landing pages that convert traffic</div>
+    <div className="statement-item">- Automated WhatsApp follow-ups</div>
+    <div className="statement-item">- CRM-based lead tracking</div>
+  </div>
 </section>
 
       {/* ================= FEATURED WORK ================= */}
