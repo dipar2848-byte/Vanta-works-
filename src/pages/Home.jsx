@@ -55,7 +55,7 @@ export default function Home() {
 
         <div
           className="hero-center"
-          style={{ transform: `translateY(${scroll * -40}px)` }}
+          style={{ transform: "none" }}
         >
           <div className="hero-badge">
             DIGITAL GROWTH SYSTEMS FOR LOCAL BUSINESSES
