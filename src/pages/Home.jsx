@@ -227,85 +227,91 @@ export default function Home() {
       </section>
 
       {/* ================= PRICING (FULL RESTORED) ================= */}
-      <section className="pricing" id="pricing">
+   {/* ================= PRICING ================= */}
+<section className="pricing" id="pricing">
 
-        <div className="section-top center">
-          <span>PACKAGES</span>
-          <h2>Choose Your Growth System</h2>
-        </div>
+  <div className="section-top center">
+    <span>PACKAGES</span>
+    <h2>Choose Your Growth System</h2>
+  </div>
 
-        <div className="pricing-grid">
+  <div className="pricing-grid">
 
-          <div className="price-card">
-            <h3>Starter Website</h3>
-            <p className="package-price">₹9,999</p>
-            <h4>High-converting business website</h4>
+    {/* ========== STARTER ========== */}
+    <div className="price-card">
+      <h3>Starter Website</h3>
+      <p className="package-price">₹9,999</p>
+      <h4>High-converting business website</h4>
 
-            <ul>
-              <li>Modern responsive website (mobile-first)</li>
-              <li>Premium UI/UX design</li>
-              <li>WhatsApp click-to-chat integration</li>
-              <li>Contact / lead form (Web3Forms)</li>
-              <li>Email delivery of enquiries</li>
-              <li>Basic SEO setup</li>
-              <li>Fast deployment</li>
-<a
-  href="https://wa.me/91YOURNUMBER"
-  target="_blank"
-  className="price-btn"
->
-  Get Started
-</a>
-            </ul>
+      <ul>
+        <li>Modern responsive website (mobile-first)</li>
+        <li>Premium UI/UX design</li>
+        <li>WhatsApp click-to-chat integration</li>
+        <li>Contact / lead form (Web3Forms)</li>
+        <li>Email delivery of enquiries</li>
+        <li>Basic SEO setup</li>
+        <li>Fast deployment</li>
+      </ul>
 
-          </div>
+      <a
+        href="https://wa.me/91YOURNUMBER"
+        target="_blank"
+        className="price-btn"
+      >
+        Get Started
+      </a>
+    </div>
 
-          <div className="price-card featured-price">
-            <h3>Growth System</h3>
-            <p className="package-price">₹19,999</p>
-            <h4>Complete lead management system</h4>
+    {/* ========== GROWTH ========== */}
+    <div className="price-card featured-price">
+      <h3>Growth System</h3>
+      <p className="package-price">₹19,999</p>
+      <h4>Complete lead management system</h4>
 
-            <ul>
-              <li>Everything in Starter Package</li>
-              <li>Supabase CRM database</li>
-              <li>Admin dashboard</li>
-              <li>Lead tracking system</li>
-              <li>Booking system integration</li>
-              <li>Email automation workflows</li>
-<a
-  href="https://wa.me/91YOURNUMBER"
-  target="_blank"
-  className="price-btn"
->
-  Get Started
-</a>
-            </ul>
-          </div>
+      <ul>
+        <li>Everything in Starter Package</li>
+        <li>Supabase CRM database</li>
+        <li>Admin dashboard</li>
+        <li>Lead tracking system</li>
+        <li>Booking system integration</li>
+        <li>Email automation workflows</li>
+      </ul>
 
-          <div className="price-card">
-            <h3>Automation System</h3>
-            <p className="package-price">₹34,999+</p>
-            <h4>Advanced business automation engine</h4>
+      <a
+        href="https://wa.me/91YOURNUMBER"
+        target="_blank"
+        className="price-btn"
+      >
+        Get Started
+      </a>
+    </div>
 
-            <ul>
-              <li>Everything in Growth System</li>
-              <li>AI chatbot integration</li>
-              <li>Automated follow-ups</li>
-              <li>Lead scoring system</li>
-              <li>Analytics dashboard</li>
-<a
-  href="https://wa.me/91YOURNUMBER"
-  target="_blank"
-  className="price-btn"
->
-  Get Started
-</a>
-            </ul>
-          </div>
+    {/* ========== AUTOMATION ========== */}
+    <div className="price-card">
+      <h3>Automation System</h3>
+      <p className="package-price">₹34,999+</p>
+      <h4>Advanced business automation engine</h4>
 
-        </div>
+      <ul>
+        <li>Everything in Growth System</li>
+        <li>AI chatbot integration</li>
+        <li>Automated follow-ups</li>
+        <li>Lead scoring system</li>
+        <li>Analytics dashboard</li>
+      </ul>
 
-      </section>
+      <a
+        href="https://wa.me/91YOURNUMBER"
+        target="_blank"
+        className="price-btn"
+      >
+        Get Started
+      </a>
+    </div>
+
+  </div>
+
+</section>
 <section className="final-cta">
   <h2>Start Your Project With Us</h2>
 
