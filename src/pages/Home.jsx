@@ -1,7 +1,10 @@
 import { useRef } from "react";
 import LeadForm from "../LeadForm";
+import useScrollProgress from "../hooks/useScrollProgress";
 
 export default function Home() {
+  const scroll = useScrollProgress();
+
   const openCalendly = () => {
     window.Calendly?.initPopupWidget({
       url: "https://calendly.com/vantaworkss/30min",
@@ -11,173 +14,176 @@ export default function Home() {
   return (
     <div className="site">
 
-      {/* NAV */}
+      {/* NAVBAR */}
       <header className="navbar">
-        <div className="logo-wrap">
-          <div className="logo-box">VW</div>
-          <div className="logo-text">
-            <span>VANTA</span>
-            <span>WORKS</span>
+        <div className="navbar-inner">
+
+          <div className="logo-wrap">
+            <div className="logo-box">VW</div>
+            <div className="logo-text">
+              <span>VANTA</span>
+              <span>WORKS</span>
+            </div>
           </div>
+
+          <nav>
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <button className="nav-btn" onClick={openCalendly}>
+            Book Strategy Call
+          </button>
+
         </div>
-
-        <nav>
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <button className="nav-btn" onClick={openCalendly}>
-          Strategy Call
-        </button>
       </header>
 
       {/* HERO */}
-      <section className="hero">
-        <h1>
-          Websites That Turn <br />
-          Visitors Into <span>Customers</span>
-        </h1>
+      <section className="hero section">
+        <div className="container stack center">
 
-        <p>
-          Premium websites + WhatsApp lead systems + booking automation for real business growth.
-        </p>
+          <h1>
+            Websites That Turn <br />
+            Visitors Into Customers
+          </h1>
 
-        <div className="hero-buttons">
-          <a href="#work" className="primary-btn">View Work</a>
-          <a href="https://wa.me/91YOURNUMBER" className="secondary-btn">
-            WhatsApp
-          </a>
+          <p>
+            Premium websites, WhatsApp automation, booking systems,
+            and lead funnels for local businesses.
+          </p>
+
+          <div className="hero-buttons">
+            <a href="#work" className="primary-btn">View Work</a>
+            <a href="https://wa.me/91YOURNUMBER" className="secondary-btn">
+              WhatsApp
+            </a>
+          </div>
+
+          <div className="hero-price">
+            Starting from ₹9,999
+          </div>
+
         </div>
       </section>
 
       {/* STATEMENT */}
-      <section className="statement-section">
-        <span>WHY BUSINESSES LOSE CUSTOMERS</span>
+      <section className="section">
+        <div className="container center stack">
 
-        <h2>Most Businesses Have No Real Lead System.</h2>
+          <h2>Most Businesses Have No Lead System</h2>
 
-        <p>
-          Visitors come in, but there is no follow-up system — leads are lost.
-        </p>
+          <div className="statement-list">
+            <div>Landing pages that convert</div>
+            <div>WhatsApp automation follow-ups</div>
+            <div>CRM lead tracking system</div>
+          </div>
 
-        <div className="statement-list">
-          <div>Landing pages that convert traffic</div>
-          <div>Automated WhatsApp follow-ups</div>
-          <div>CRM-based lead tracking</div>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section className="services">
-        <h2 className="section-title">Systems We Build</h2>
+      <section id="services" className="section">
+        <div className="container">
 
-        <div className="services-grid">
-          <div className="card">
-            <h3>Premium Website</h3>
-            <p>High conversion UI designed for trust & speed.</p>
+          <div className="section-top center">
+            <span>SERVICES</span>
+            <h2>Built for Growth</h2>
           </div>
 
-          <div className="card">
-            <h3>Lead System</h3>
-            <p>WhatsApp + CRM integration for tracking leads.</p>
+          <div className="services-grid">
+            <div className="service-card">Premium Website</div>
+            <div className="service-card">Lead System</div>
+            <div className="service-card">Automation</div>
           </div>
 
-          <div className="card">
-            <h3>Automation</h3>
-            <p>Follow-ups, booking flow, and notifications.</p>
-          </div>
         </div>
       </section>
 
-      {/* PRICING (DETAILED + FIXED STRUCTURE) */}
-      <section className="pricing" id="pricing">
+      {/* PRICING */}
+      <section id="pricing" className="section">
+        <div className="container">
 
-        <h2 className="section-title">Pricing & Packages</h2>
-
-        <div className="pricing-grid">
-
-          {/* STARTER */}
-          <div className="price-card">
-            <h3>Starter Website</h3>
-            <p className="price">₹9,999</p>
-
-            <p className="desc">High-converting business website setup</p>
-
-            <ul>
-              <li>Modern responsive website (mobile-first)</li>
-              <li>Premium UI/UX design</li>
-              <li>WhatsApp click-to-chat integration</li>
-              <li>Contact / lead form (Web3Forms)</li>
-              <li>Email delivery of enquiries</li>
-              <li>Basic SEO setup</li>
-              <li>Fast deployment</li>
-            </ul>
-
-            <a
-              className="btn"
-              href="https://wa.me/91YOURNUMBER?text=I%20want%20Starter%20Website"
-            >
-              Get Started
-            </a>
+          <div className="section-top center">
+            <span>PRICING</span>
+            <h2>Choose Plan</h2>
           </div>
 
-          {/* GROWTH */}
-          <div className="price-card featured">
-            <h3>Growth System</h3>
-            <p className="price">₹19,999</p>
+          <div className="pricing-grid">
 
-            <p className="desc">Complete lead management system</p>
+            <div className="price-card">
+              <h3>Starter</h3>
+              <p className="package-price">₹9,999</p>
 
-            <ul>
-              <li>Everything in Starter Package</li>
-              <li>Supabase CRM database</li>
-              <li>Admin dashboard for leads</li>
-              <li>Lead tracking system</li>
-              <li>Booking system integration</li>
-              <li>Email automation workflows</li>
-            </ul>
+              <ul>
+                <li>Website</li>
+                <li>WhatsApp integration</li>
+                <li>Basic SEO</li>
+              </ul>
 
-            <a
-              className="btn"
-              href="https://wa.me/91YOURNUMBER?text=I%20want%20Growth%20System"
-            >
-              Get Started
-            </a>
-          </div>
+              <a className="price-btn" href="https://wa.me/91YOURNUMBER">
+                Get Started
+              </a>
+            </div>
 
-          {/* AUTOMATION */}
-          <div className="price-card">
-            <h3>Automation System</h3>
-            <p className="price">₹34,999+</p>
+            <div className="price-card featured">
+              <h3>Growth</h3>
+              <p className="package-price">₹19,999</p>
 
-            <p className="desc">Advanced business automation engine</p>
+              <ul>
+                <li>CRM system</li>
+                <li>Lead tracking</li>
+                <li>Automation</li>
+              </ul>
 
-            <ul>
-              <li>Everything in Growth System</li>
-              <li>AI chatbot integration</li>
-              <li>Automated follow-ups</li>
-              <li>Lead scoring system</li>
-              <li>Analytics dashboard</li>
-            </ul>
+              <a className="price-btn" href="https://wa.me/91YOURNUMBER">
+                Get Started
+              </a>
+            </div>
 
-            <a
-              className="btn"
-              href="https://wa.me/91YOURNUMBER?text=I%20want%20Automation%20System"
-            >
-              Get Started
-            </a>
+            <div className="price-card">
+              <h3>Pro</h3>
+              <p className="package-price">₹34,999+</p>
+
+              <ul>
+                <li>AI chatbot</li>
+                <li>Analytics</li>
+                <li>Advanced automation</li>
+              </ul>
+
+              <a className="price-btn" href="https://wa.me/91YOURNUMBER">
+                Get Started
+              </a>
+            </div>
+
           </div>
 
         </div>
       </section>
 
       {/* LEAD FORM */}
-      <section id="contact" className="contact">
-        <h2>Start Your Project</h2>
-        <LeadForm />
+      <section id="contact" className="section">
+        <div className="container">
+
+          <div className="lead-container">
+
+            <div className="lead-info">
+              <h2>Get a Free Strategy Plan</h2>
+              <p>We design your full lead system.</p>
+            </div>
+
+            <LeadForm />
+
+          </div>
+
+        </div>
       </section>
+
+      {/* WHATSAPP FLOAT */}
+      <a className="floating-whatsapp" href="https://wa.me/91YOURNUMBER">
+        WhatsApp
+      </a>
 
     </div>
   );
