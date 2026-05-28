@@ -1684,3 +1684,98 @@ body {
     display: none;
   }
 }
+/* =========================
+   V5 CINEMATIC LAYER PATCH
+   ========================= */
+
+/* WebGL background safety layer */
+canvas {
+  pointer-events: none;
+}
+
+/* ensure UI stays above WebGL */
+.site {
+  position: relative;
+  z-index: 1;
+}
+
+/* HERO CINEMATIC SCENE */
+.hero {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* sticky motion behavior (hero scroll feel) */
+.hero-center {
+  position: relative;
+  z-index: 2;
+}
+
+/* background glow motion layer */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 700px;
+  height: 700px;
+  margin: auto;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08),
+    transparent 70%
+  );
+  filter: blur(90px);
+  z-index: 0;
+}
+
+/* STORY PIN SECTION */
+.statement-section {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 7%;
+}
+
+/* motion-friendly text block */
+.statement-section > div {
+  will-change: transform, opacity;
+}
+
+/* smooth layer blending */
+.featured,
+.services,
+.pricing,
+.dashboard-preview,
+.reviews,
+.contact,
+.lead-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* improve WebGL depth feel */
+body {
+  background: #050505;
+  overflow-x: hidden;
+}
+
+/* subtle premium glow enhancement */
+.hero h1 span {
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+/* smoother motion rendering */
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
