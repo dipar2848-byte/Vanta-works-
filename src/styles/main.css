@@ -1,5 +1,11 @@
-body {
+/* ===== BASE RESET ===== */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   background: #050505;
   color: white;
   font-family: Inter, sans-serif;
@@ -10,70 +16,142 @@ body {
   width: 100%;
 }
 
-/* NAV */
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  padding: 20px 7%;
+  padding: 18px 7%;
   display: flex;
   justify-content: space-between;
-  background: rgba(0,0,0,0.6);
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
 }
 
-/* HERO */
+.logo-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logo-box {
+  width: 40px;
+  height: 40px;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* ===== HERO ===== */
 .hero {
   padding: 140px 7% 80px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 1.1;
 }
 
-/* SECTIONS */
-section {
-  padding: 100px 7%;
+.hero p {
+  margin-top: 20px;
+  color: #aaa;
 }
 
-/* STATEMENT */
-.statement-list {
+/* ===== BUTTONS ===== */
+.hero-buttons {
   margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn,
+.btn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.primary-btn,
+.btn {
+  background: white;
+  color: black;
+}
+
+.secondary-btn {
+  border: 1px solid #333;
+  color: white;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 90px 7%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* ===== STATEMENT ===== */
+.statement-list {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* PRICING */
+/* ===== GRID SYSTEM ===== */
+.services-grid,
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
+/* ===== CARDS ===== */
+.card,
 .price-card {
-  padding: 30px;
   background: #111;
-  border-radius: 20px;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.price {
+  font-size: 2rem;
+  margin: 10px 0;
 }
 
 .price-card ul {
-  list-style: none;
-  padding: 0;
+  padding-left: 18px;
+  margin-top: 10px;
 }
 
-/* BUTTONS */
-a {
-  color: white;
-  text-decoration: none;
+.price-card ul li {
+  margin-bottom: 8px;
 }
 
-.floating-whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: white;
-  color: black;
-  padding: 12px 18px;
-  border-radius: 50px;
+/* ===== FEATURED ===== */
+.featured {
+  border: 1px solid #444;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  text-align: center;
 }
