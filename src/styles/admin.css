@@ -1,0 +1,31 @@
+/* ================= ADMIN LAYOUT ================= */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0b0b0f;
+  color: white;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 240px;
+  background: #111;
+  padding: 20px;
+}
+
+/* MAIN */
+
+.admin-main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* STATS */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
