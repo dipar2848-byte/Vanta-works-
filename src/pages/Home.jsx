@@ -314,13 +314,13 @@ export default function Home() {
     Book a free strategy session and we’ll map your complete lead system.
   </p>
 
-  <a
-    href="#"
-    onClick={openCalendly}
-    className="cta-btn"
-  >
-    Book Strategy Call
-  </a>
+  <button
+  type="button"
+  onClick={openCalendly}
+  className="cta-btn"
+>
+  Book Strategy Call
+</button>
 </section>
 
       {/* ================= FLOATING WHATSAPP ================= */}
