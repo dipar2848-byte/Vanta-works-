@@ -1,7 +1,5 @@
 /* ================= NAVBAR ================= */
-body {
-  outline: 5px solid red !important;
-}
+
 .navbar {
   width: 100%;
   padding: 28px 7%;
@@ -182,12 +180,31 @@ body {
 .price-btn:hover {
   transform: translateY(-4px);
 }
-.price-btn {
-  all: unset !important;
-  display: block !important;
-  background: yellow !important;
-  color: black !important;
-  padding: 20px !important;
-  text-align: center !important;
-  font-weight: 900 !important;
+.price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+  color: #cfcfcf;
+  font-size: 0.95rem;
+}
+
+.whatsapp-btn {
+  background: #25D366 !important;
+  color: white !important;
+  font-weight: 700;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 18px;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-4px);
+  opacity: 0.9;
 }
