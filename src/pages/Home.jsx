@@ -227,8 +227,7 @@ export default function Home() {
       </section>
 
       {/* ================= PRICING (FULL RESTORED) ================= */}
-   {/* ================= PRICING ================= */}
-<section className="pricing" id="pricing">
+   <section className="pricing" id="pricing">
 
   <div className="section-top center">
     <span>PACKAGES</span>
@@ -239,74 +238,78 @@ export default function Home() {
 
     {/* ========== STARTER ========== */}
     <div className="price-card">
+
       <h3>Starter Website</h3>
       <p className="package-price">₹9,999</p>
       <h4>High-converting business website</h4>
 
-      <ul>
-        <li>Modern responsive website (mobile-first)</li>
-        <li>Premium UI/UX design</li>
-        <li>WhatsApp click-to-chat integration</li>
-        <li>Contact / lead form (Web3Forms)</li>
-        <li>Email delivery of enquiries</li>
-        <li>Basic SEO setup</li>
-        <li>Fast deployment</li>
-      </ul>
+      <div className="price-list">
+        <div>• Modern responsive website (mobile-first)</div>
+        <div>• Premium UI/UX design</div>
+        <div>• WhatsApp click-to-chat integration</div>
+        <div>• Contact / lead form</div>
+        <div>• Basic SEO setup</div>
+        <div>• Fast deployment</div>
+      </div>
 
       <a
-        href="https://wa.me/91YOURNUMBER"
+        href="https://wa.me/91YOURNUMBER?text=Hi%20I%20want%20Starter%20Website"
         target="_blank"
-        className="price-btn"
+        className="price-btn whatsapp-btn"
       >
-        Get Started
+        Get Started on WhatsApp
       </a>
+
     </div>
 
     {/* ========== GROWTH ========== */}
     <div className="price-card featured-price">
+
       <h3>Growth System</h3>
       <p className="package-price">₹19,999</p>
       <h4>Complete lead management system</h4>
 
-      <ul>
-        <li>Everything in Starter Package</li>
-        <li>Supabase CRM database</li>
-        <li>Admin dashboard</li>
-        <li>Lead tracking system</li>
-        <li>Booking system integration</li>
-        <li>Email automation workflows</li>
-      </ul>
+      <div className="price-list">
+        <div>• Everything in Starter Package</div>
+        <div>• Supabase CRM dashboard</div>
+        <div>• Lead tracking system</div>
+        <div>• Booking automation</div>
+        <div>• Email workflows</div>
+      </div>
 
       <a
-        href="https://wa.me/91YOURNUMBER"
+        href="https://wa.me/91YOURNUMBER?text=Hi%20I%20want%20Growth%20System"
         target="_blank"
-        className="price-btn"
+        className="price-btn whatsapp-btn"
       >
-        Get Started
+        Get Started on WhatsApp
       </a>
+
     </div>
 
     {/* ========== AUTOMATION ========== */}
     <div className="price-card">
+
       <h3>Automation System</h3>
       <p className="package-price">₹34,999+</p>
       <h4>Advanced business automation engine</h4>
 
-      <ul>
-        <li>Everything in Growth System</li>
-        <li>AI chatbot integration</li>
-        <li>Automated follow-ups</li>
-        <li>Lead scoring system</li>
-        <li>Analytics dashboard</li>
-      </ul>
+      <div className="price-list">
+        <div>• Everything in Growth System</div>
+        <div>• AI chatbot integration</div>
+        <div>• Automated follow-ups</div>
+        <div>• Lead scoring system</div>
+        <div>• Analytics dashboard</div>
+      </div>
 
       <a
-        href="https://wa.me/91YOURNUMBER"
+        href="https://wa.me/91YOURNUMBER?text=Hi%20I%20want%20Automation%20System"
         target="_blank"
-        className="price-btn"
+        className="price-btn whatsapp-btn"
       >
-        Get Started
+        Get Started on WhatsApp
       </a>
+
     </div>
 
   </div>
