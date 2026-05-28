@@ -1,218 +1,79 @@
-/* ================= NAVBAR ================= */
+body {
+  margin: 0;
+  background: #050505;
+  color: white;
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
+}
 
-.navbar {
+.site {
   width: 100%;
-  padding: 28px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+
+/* NAV */
+.navbar {
   position: fixed;
   top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(18px);
-  background: rgba(0,0,0,0.45);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.logo-wrap {
+  width: 100%;
+  padding: 20px 7%;
   display: flex;
-  align-items: center;
-  gap: 14px;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.6);
 }
 
-.logo-box {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-}
-
-/* ================= HERO ================= */
-
+/* HERO */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 140px 7% 80px;
   text-align: center;
-  padding: 140px 7% 100px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
-  filter: blur(90px);
 }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 6vw, 7rem);
-  line-height: 0.92;
+  font-size: clamp(2.5rem, 6vw, 6rem);
 }
 
-.hero p {
-  max-width: 720px;
-  margin: 30px auto;
-  color: #a7a7a7;
-  line-height: 1.9;
+/* SECTIONS */
+section {
+  padding: 100px 7%;
 }
 
-/* ================= STATEMENT (FIXED FORMAT) ================= */
-
-
-
-
-/* ================= SERVICES ================= */
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
+/* STATEMENT */
+.statement-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* ================= PRICING ================= */
-
+/* PRICING */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
 }
 
-.price-card,
-.service-card,
-.review-card {
-  background: #0b0b0b;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 28px;
-  padding: 40px;
+.price-card {
+  padding: 30px;
+  background: #111;
+  border-radius: 20px;
 }
 
-/* ================= CTA ================= */
-
-.final-cta {
-  padding: 160px 7%;
-  text-align: center;
+.price-card ul {
+  list-style: none;
+  padding: 0;
 }
 
-.cta-btn {
-  display: inline-flex;
-  padding: 18px 28px;
-  background: white;
-  color: black;
-  border-radius: 16px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
+/* BUTTONS */
+a {
+  color: white;
+  text-decoration: none;
 }
-
-/* ================= WHATSAPP ================= */
 
 .floating-whatsapp {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 20px;
+  right: 20px;
   background: white;
   color: black;
-  padding: 16px 22px;
-  border-radius: 999px;
-  font-weight: 600;
-}
-.price-btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-  margin-top: 20px;
-
-  padding: 18px;
-  border-radius: 16px;
-
-  background: white;
-  color: black;
-
-  font-weight: 600;
-  text-decoration: none;
-
-  transition: transform 0.25s ease;
-}
-
-.price-btn:hover {
-  transform: translateY(-4px);
-}
-.price-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 20px 0;
-  color: #cfcfcf;
-  font-size: 0.95rem;
-}
-
-.whatsapp-btn {
-  background: #25D366 !important;
-  color: white !important;
-  font-weight: 700;
-  border-radius: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 18px;
-  margin-top: 20px;
-  text-decoration: none;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.whatsapp-btn:hover {
-  transform: translateY(-4px);
-  opacity: 0.9;
-}
-.statement-section {
-  padding: 140px 7%;
-  text-align: center;
-}
-
-.statement-section span {
-  color: #7c7c7c;
-  letter-spacing: 4px;
-}
-
-.statement-section h2 {
-  margin-top: 28px;
-  font-size: 5rem;
-  line-height: 1;
-  color: white;
-}
-
-.statement-section p {
-  max-width: 760px;
-  margin: 30px auto 0;
-  color: #9e9e9e;
-  line-height: 1.9;
-  font-size: 1.05rem;
-}
-
-.statement-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 30px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.statement-item {
-  color: #cfcfcf;
-  font-size: 1rem;
-  line-height: 1.6;
+  padding: 12px 18px;
+  border-radius: 50px;
 }
