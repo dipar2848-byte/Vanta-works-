@@ -246,7 +246,15 @@ export default function Home() {
               <li>Email delivery of enquiries</li>
               <li>Basic SEO setup</li>
               <li>Fast deployment</li>
+<a
+  href="https://wa.me/91YOURNUMBER"
+  target="_blank"
+  className="price-btn"
+>
+  Get Started
+</a>
             </ul>
+
           </div>
 
           <div className="price-card featured-price">
