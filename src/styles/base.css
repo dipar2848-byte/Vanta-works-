@@ -1,0 +1,43 @@
+/* ================= BASE RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050505;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.site {
+  width: 100%;
+  position: relative;
+}
+
+/* Noise layer */
+.noise {
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  background-image: radial-gradient(circle, white 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Global animation safety */
+a, button {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+a:hover, button:hover {
+  transform: translateY(-3px);
+}
