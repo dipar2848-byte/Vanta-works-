@@ -1,4 +1,3 @@
-/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -14,31 +13,32 @@ html, body {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
-/* ================= GLOBAL WRAPPER ================= */
+/* ================= SITE WRAPPER ================= */
 .site {
   width: 100%;
 }
 
-/* ================= NOISE / BACKGROUND ================= */
+/* ================= NOISE ================= */
 .noise {
   position: fixed;
   inset: 0;
   opacity: 0.03;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 10px 10px;
   z-index: 1;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR (FIXED) ================= */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 72px;
 
@@ -47,13 +47,23 @@ a {
   align-items: center;
 
   padding: 0 6%;
+  gap: 24px;
+
   background: rgba(0,0,0,0.75);
   backdrop-filter: blur(14px);
 
   border-bottom: 1px solid rgba(255,255,255,0.06);
+
   z-index: 9999;
 }
 
+.navbar nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* ================= LOGO ================= */
 .logo-wrap {
   display: flex;
   align-items: center;
@@ -72,46 +82,6 @@ a {
   font-weight: 700;
 }
 
-/* ================= BUTTONS ================= */
-.nav-btn,
-.primary-btn,
-.secondary-btn,
-.price-btn,
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 12px 18px;
-  border-radius: 12px;
-
-  transition: 0.25s ease;
-  cursor: pointer;
-}
-
-.nav-btn,
-.primary-btn,
-.price-btn,
-.cta-btn {
-  background: white;
-  color: black;
-  border: none;
-}
-
-.secondary-btn {
-  border: 1px solid rgba(255,255,255,0.15);
-  background: transparent;
-  color: white;
-}
-
-.nav-btn:hover,
-.primary-btn:hover,
-.price-btn:hover,
-.cta-btn:hover,
-.secondary-btn:hover {
-  transform: translateY(-3px);
-}
-
 /* ================= HERO ================= */
 .hero {
   min-height: 100vh;
@@ -126,38 +96,63 @@ a {
 .hero h1 {
   font-size: clamp(2.4rem, 6vw, 5.8rem);
   line-height: 1.05;
-  font-weight: 600;
 }
 
 .hero p {
   margin-top: 18px;
-  max-width: 700px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
-  color: #a8a8a8;
+  color: #aaa;
   line-height: 1.7;
 }
 
-.hero-buttons {
-  margin-top: 26px;
-  display: flex;
+/* ================= BUTTONS ================= */
+.primary-btn,
+.secondary-btn,
+.nav-btn,
+.price-btn,
+.cta-btn {
+  display: inline-flex;
   justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
+  align-items: center;
+
+  padding: 12px 18px;
+  border-radius: 12px;
+
+  transition: 0.25s ease;
+  cursor: pointer;
 }
 
-.hero-price {
-  margin-top: 18px;
-  color: #8c8c8c;
-  font-size: 0.9rem;
+.primary-btn,
+.nav-btn,
+.price-btn,
+.cta-btn {
+  background: white;
+  color: black;
+  border: none;
 }
 
-/* ================= SECTION BASE ================= */
+.secondary-btn {
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: white;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.nav-btn:hover,
+.price-btn:hover,
+.cta-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= SECTIONS ================= */
 section {
   padding: 100px 6%;
-  position: relative;
 }
 
+/* ================= SECTION TITLES ================= */
 .section-top {
   text-align: center;
   margin-bottom: 50px;
@@ -184,10 +179,10 @@ section {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: #cfcfcf;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  color: #cfcfcf;
 }
 
 /* ================= GRID ================= */
@@ -219,13 +214,19 @@ section {
 }
 
 .price-card ul {
-  margin-top: 10px;
   padding-left: 18px;
+  margin-top: 10px;
 }
 
 .price-card ul li {
   margin-bottom: 8px;
   color: #cfcfcf;
+}
+
+/* ================= PRICE BUTTON FIX ================= */
+.price-btn {
+  width: 100%;
+  margin-top: 16px;
 }
 
 /* ================= FINAL CTA ================= */
@@ -267,28 +268,28 @@ section {
   margin-bottom: 12px;
 }
 
-.lead-form textarea {
-  min-height: 120px;
-  resize: none;
-}
-
-/* ================= WHATSAPP FLOAT ================= */
+/* ================= FLOATING WHATSAPP (RESTORED) ================= */
 .floating-whatsapp {
   position: fixed;
   right: 20px;
   bottom: 20px;
 
-  background: white;
+  background: #25D366;
   color: black;
+
   padding: 12px 16px;
   border-radius: 999px;
 
   font-weight: 600;
-  z-index: 9999;
+  z-index: 99999;
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
+
+  .navbar {
+    padding: 0 5%;
+  }
 
   .services-grid,
   .pricing-grid {
@@ -301,9 +302,5 @@ section {
 
   .hero {
     padding-top: 120px;
-  }
-
-  .navbar {
-    padding: 0 5%;
   }
 }
