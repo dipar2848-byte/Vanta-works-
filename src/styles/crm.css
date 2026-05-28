@@ -1,0 +1,41 @@
+/* ================= CRM WRAPPER ================= */
+
+.crm {
+  display: flex;
+  min-height: 100vh;
+  background: #07070a;
+  color: #eaeaea;
+}
+
+/* SIDEBAR */
+
+.crm-sidebar {
+  width: 260px;
+  background: #0d0d12;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  padding: 24px;
+}
+
+/* MAIN */
+
+.crm-main {
+  flex: 1;
+  padding: 30px;
+}
+
+/* CARDS */
+
+.crm-card {
+  background: #0d0d12;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 16px;
+  border-radius: 10px;
+}
+
+/* KPIs */
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
