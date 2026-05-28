@@ -19,7 +19,7 @@ export default function Home() {
 
       {/* ================= WEBGL BACKGROUND ================= */}
       <div className="webgl-bg">
-        <WebGLScene scroll={scroll} />
+        {/* <WebGLScene scroll={scroll} /> */}
       </div>
 
       <div className="noise"></div>
