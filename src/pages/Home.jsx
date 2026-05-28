@@ -269,6 +269,13 @@ export default function Home() {
               <li>Lead tracking system</li>
               <li>Booking system integration</li>
               <li>Email automation workflows</li>
+<a
+  href="https://wa.me/91YOURNUMBER"
+  target="_blank"
+  className="price-btn"
+>
+  Get Started
+</a>
             </ul>
           </div>
 
@@ -283,6 +290,13 @@ export default function Home() {
               <li>Automated follow-ups</li>
               <li>Lead scoring system</li>
               <li>Analytics dashboard</li>
+<a
+  href="https://wa.me/91YOURNUMBER"
+  target="_blank"
+  className="price-btn"
+>
+  Get Started
+</a>
             </ul>
           </div>
 
