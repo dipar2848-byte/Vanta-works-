@@ -307,6 +307,21 @@ export default function Home() {
         </div>
 
       </section>
+<section className="final-cta">
+  <h2>Start Your Project With Us</h2>
+
+  <p>
+    Book a free strategy session and we’ll map your complete lead system.
+  </p>
+
+  <a
+    href="#"
+    onClick={openCalendly}
+    className="cta-btn"
+  >
+    Book Strategy Call
+  </a>
+</section>
 
       {/* ================= FLOATING WHATSAPP ================= */}
       <a
