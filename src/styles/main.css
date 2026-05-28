@@ -7,290 +7,150 @@
 html, body {
   width: 100%;
   overflow-x: hidden;
-  font-family: Inter, system-ui, sans-serif;
   background: #050505;
   color: white;
+  font-family: Inter, system-ui, sans-serif;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+/* LAYOUT SYSTEM */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* ================= SITE WRAPPER ================= */
-.site {
-  width: 100%;
+.section {
+  padding: 100px 0;
 }
 
-/* ================= NOISE ================= */
-.noise {
-  position: fixed;
-  inset: 0;
-  opacity: 0.03;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 10px 10px;
-  z-index: 1;
-}
-
-/* ================= NAVBAR (FIXED) ================= */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
-
   width: 100%;
   height: 72px;
-
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-
-  padding: 0 6%;
-  gap: 24px;
-
   background: rgba(0,0,0,0.75);
   backdrop-filter: blur(14px);
-
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-
   z-index: 9999;
 }
 
-.navbar nav {
+.navbar-inner {
+  width: 100%;
+  max-width: 1180px;
   display: flex;
-  gap: 24px;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
-/* ================= LOGO ================= */
-.logo-wrap {
+nav {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .logo-box {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
+  width: 40px;
+  height: 40px;
   background: white;
   color: black;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-weight: 700;
+  justify-content: center;
+  font-weight: bold;
 }
 
-/* ================= HERO ================= */
-.hero {
-  min-height: 100vh;
-  padding: 140px 6% 80px;
-
-  display: flex;
-  flex-direction: column;
+/* BUTTONS */
+.primary-btn,
+.secondary-btn,
+.nav-btn,
+.price-btn {
+  padding: 12px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-flex;
   justify-content: center;
+  align-items: center;
+}
+
+.primary-btn,
+.nav-btn,
+.price-btn {
+  background: white;
+  color: black;
+}
+
+.secondary-btn {
+  border: 1px solid #333;
+}
+
+.price-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* HERO */
+.hero {
+  padding-top: 140px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 6vw, 5.8rem);
-  line-height: 1.05;
+  font-size: 3rem;
 }
 
 .hero p {
-  margin-top: 18px;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 15px;
   color: #aaa;
-  line-height: 1.7;
 }
 
-/* ================= BUTTONS ================= */
-.primary-btn,
-.secondary-btn,
-.nav-btn,
-.price-btn,
-.cta-btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 12px 18px;
-  border-radius: 12px;
-
-  transition: 0.25s ease;
-  cursor: pointer;
-}
-
-.primary-btn,
-.nav-btn,
-.price-btn,
-.cta-btn {
-  background: white;
-  color: black;
-  border: none;
-}
-
-.secondary-btn {
-  border: 1px solid rgba(255,255,255,0.15);
-  background: transparent;
-  color: white;
-}
-
-.primary-btn:hover,
-.secondary-btn:hover,
-.nav-btn:hover,
-.price-btn:hover,
-.cta-btn:hover {
-  transform: translateY(-3px);
-}
-
-/* ================= SECTIONS ================= */
-section {
-  padding: 100px 6%;
-}
-
-/* ================= SECTION TITLES ================= */
-.section-top {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.section-top span {
-  font-size: 0.8rem;
-  letter-spacing: 3px;
-  color: #777;
-}
-
-.section-top h2 {
-  margin-top: 10px;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-}
-
-/* ================= STATEMENT ================= */
-.statement-section {
-  text-align: center;
-}
-
-.statement-list {
-  margin-top: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  color: #cfcfcf;
-}
-
-/* ================= GRID ================= */
+/* GRID */
 .services-grid,
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 40px;
+  gap: 20px;
 }
 
-/* ================= CARDS ================= */
+/* CARDS */
 .service-card,
 .price-card {
-  background: #0f0f0f;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 24px;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #222;
 }
 
-/* ================= PRICING ================= */
-.price-card h3 {
-  font-size: 1.4rem;
-}
-
-.package-price {
-  font-size: 1.8rem;
-  margin: 10px 0;
-}
-
-.price-card ul {
-  padding-left: 18px;
-  margin-top: 10px;
-}
-
-.price-card ul li {
-  margin-bottom: 8px;
-  color: #cfcfcf;
-}
-
-/* ================= PRICE BUTTON FIX ================= */
-.price-btn {
-  width: 100%;
-  margin-top: 16px;
-}
-
-/* ================= FINAL CTA ================= */
-.final-cta {
-  text-align: center;
-}
-
-.final-cta p {
-  margin-top: 10px;
-  color: #aaa;
-}
-
-/* ================= LEAD FORM ================= */
+/* LEAD */
 .lead-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-top: 40px;
+  gap: 20px;
 }
 
 .lead-info,
 .lead-form {
-  background: #0f0f0f;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 28px;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
 }
 
-.lead-form input,
-.lead-form textarea {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-
-  background: #0a0a0a;
-  border: 1px solid rgba(255,255,255,0.08);
-  color: white;
-
-  margin-bottom: 12px;
-}
-
-/* ================= FLOATING WHATSAPP (RESTORED) ================= */
+/* WHATSAPP */
 .floating-whatsapp {
   position: fixed;
   right: 20px;
   bottom: 20px;
-
   background: #25D366;
   color: black;
-
   padding: 12px 16px;
   border-radius: 999px;
-
   font-weight: 600;
-  z-index: 99999;
 }
 
-/* ================= RESPONSIVE ================= */
+/* MOBILE */
 @media (max-width: 900px) {
-
-  .navbar {
-    padding: 0 5%;
-  }
-
   .services-grid,
   .pricing-grid {
     grid-template-columns: 1fr;
@@ -298,9 +158,5 @@ section {
 
   .lead-container {
     grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding-top: 120px;
   }
 }
