@@ -122,18 +122,18 @@ export default function Home() {
     Customers visit. Nobody follows up. Leads get lost in WhatsApp.
   </p>
 
-  <div className="statement-list">
+  <div className="statement-grid">
 
-    <div className="statement-item">
-      • Landing pages that convert traffic
+    <div className="statement-card">
+      Landing pages that convert traffic
     </div>
 
-    <div className="statement-item">
-      • Automated WhatsApp follow-ups
+    <div className="statement-card">
+      Automated WhatsApp follow-ups
     </div>
 
-    <div className="statement-item">
-      • CRM-based lead tracking
+    <div className="statement-card">
+      CRM-based lead tracking
     </div>
 
   </div>
