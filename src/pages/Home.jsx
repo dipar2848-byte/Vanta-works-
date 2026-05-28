@@ -1,26 +1,41 @@
-import LeadForm from "../LeadForm"
+import LeadForm from '../LeadForm'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function Home() {
-const openCalendly = () => {
-  window.Calendly.initPopupWidget({
-    url: "https://calendly.com/vantaworkss/30min"
-  });
 
-  return false;
-};
+  const { scrollYProgress } = useScroll()
+
+  const heroScale = useTransform(scrollYProgress, [0, 0.4], [1, 1.2])
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0])
+
+  const openCalendly = () => {
+    window.Calendly.initPopupWidget({
+      url: 'https://calendly.com/vantaworkss/30min'
+    })
+
+    return false
+  }
+
   return (
-    <div className="site">
+    <div className="cinematic-site">
 
       <div className="noise"></div>
+      <div className="mega-glow glow-left"></div>
+      <div className="mega-glow glow-right"></div>
 
-      {/* NAVBAR */}
-      <header className="navbar">
+      <header className="cinematic-navbar">
 
         <div className="logo-wrap">
 
-          <div className="logo-box">
+          <motion.div
+            className="logo-box"
+            whileHover={{
+              scale: 1.08,
+              rotate: 8
+            }}
+          >
             VW
-          </div>
+          </motion.div>
 
           <div className="logo-text">
             <span>VANTA</span>
@@ -30,49 +45,86 @@ const openCalendly = () => {
         </div>
 
         <nav>
-          <a href="#work">Work</a>
           <a href="#services">Systems</a>
+          <a href="#experience">Experience</a>
           <a href="#pricing">Packages</a>
-          <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <a
-  href="#"
-  onClick={openCalendly}
-  className="nav-btn"
->
-  Start Strategy Session
-</a>
+          href="#"
+          onClick={openCalendly}
+          className="nav-btn"
+        >
+          Strategy Session
+        </a>
 
       </header>
 
-      {/* HERO */}
-      <section className="hero">
+      <section className="cinematic-hero">
 
-        <div className="hero-bg"></div>
+        <motion.div
+          className="hero-orb"
+          style={{
+            scale: heroScale,
+            opacity: heroOpacity
+          }}
+        />
 
-        <div className="hero-center">
+        <div className="hero-grid"></div>
 
-          <div className="hero-badge">
-            DIGITAL GROWTH SYSTEMS FOR LOCAL BUSINESSES
-          </div>
+        <motion.div
+          className="hero-content"
+          initial={{
+            opacity: 0,
+            y: 60
+          }}
+          animate={{
+            opacity: 1,
+            y: 0
+          }}
+          transition={{
+            duration: 1.2
+          }}
+        >
 
-          <h1>
-            Websites That Turn <br />
-            Visitors Into <span>Customers</span>
-          </h1>
+          <motion.div
+            className="hero-badge"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            PREMIUM DIGITAL GROWTH SYSTEMS
+          </motion.div>
 
-          <p>
-            Vanta Works builds premium websites, WhatsApp lead systems,
-            booking flows, and automation setups that help businesses
-            generate more enquiries and conversions online.
-          </p>
+          <motion.h1
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            Websites That Feel <br />
+            Like The Future
+          </motion.h1>
 
-          <div className="hero-buttons">
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            We build cinematic websites, automation systems,
+            conversion-focused booking flows, and premium business experiences
+            engineered to generate enquiries.
+          </motion.p>
 
-            <a href="#work" className="primary-btn">
-              View Live Demo
+          <motion.div
+            className="hero-actions"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+          >
+
+            <a href="#pricing" className="primary-btn cinematic-btn">
+              View Packages
             </a>
 
             <a
@@ -80,148 +132,224 @@ const openCalendly = () => {
               target="_blank"
               className="secondary-btn"
             >
-              Chat on WhatsApp
+              WhatsApp Chat
             </a>
 
-          </div>
+          </motion.div>
 
-          <div className="hero-price">
-            Starting from ₹9,999 • Premium websites + lead systems
-          </div>
+          <motion.div
+            className="hero-metrics"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+          >
 
-          <div className="hero-stats">
-
-            <div>
+            <motion.div whileHover={{ y: -8 }}>
               <h3>Premium</h3>
-              <p>Modern Interfaces</p>
-            </div>
+              <p>Luxury interfaces</p>
+            </motion.div>
 
-            <div>
+            <motion.div whileHover={{ y: -8 }}>
               <h3>Smart</h3>
-              <p>Business Automation</p>
-            </div>
+              <p>Automation systems</p>
+            </motion.div>
 
-            <div>
+            <motion.div whileHover={{ y: -8 }}>
               <h3>Focused</h3>
-              <p>Lead Generation Systems</p>
+              <p>Lead generation</p>
+            </motion.div>
+
+          </motion.div>
+
+        </motion.div>
+
+      </section>
+
+      <section className="story-section" id="experience">
+
+        <motion.div
+          className="story-panel"
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+
+          <span>WHY MOST BUSINES FAIL</span>
+
+          <h2>
+            Visitors arrive.
+            <br />
+            Nobody follows up.
+          </h2>
+
+          <p>
+            Businesses lose customers every day because their websites
+            are static brochures instead of conversion systems.
+          </p>
+
+        </motion.div>
+
+      </section>
+
+      <section className="systems-section" id="services">
+
+        <div className="section-heading center">
+          <span>WHAT WE BUILD</span>
+          <h2>High-Converting Digital Systems</h2>
+        </div>
+
+        <div className="systems-grid">
+
+          <motion.div
+            className="system-card"
+            whileHover={{ y: -12 }}
+          >
+            <div className="card-glow"></div>
+            <h3>Premium Websites</h3>
+            <p>
+              Cinematic business websites engineered for trust and conversion.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="system-card"
+            whileHover={{ y: -12 }}
+          >
+            <div className="card-glow"></div>
+            <h3>CRM Systems</h3>
+            <p>
+              Smart lead tracking dashboards with conversion workflows.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="system-card"
+            whileHover={{ y: -12 }}
+          >
+            <div className="card-glow"></div>
+            <h3>Automation Engines</h3>
+            <p>
+              Booking systems, automation flows, and customer pipelines.
+            </p>
+          </motion.div>
+
+        </div>
+
+      </section>
+
+      <section className="dashboard-scene">
+
+        <div className="section-heading center">
+          <span>BUSINESS CONTROL</span>
+          <h2>Track Every Lead</h2>
+        </div>
+
+        <motion.div
+          className="dashboard-frame"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+
+          <div className="dashboard-topbar">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div className="dashboard-grid">
+
+            <div className="dashboard-widget">
+              <h3>124</h3>
+              <p>Total Leads</p>
+            </div>
+
+            <div className="dashboard-widget">
+              <h3>89%</h3>
+              <p>Response Rate</p>
+            </div>
+
+            <div className="dashboard-widget">
+              <h3>37</h3>
+              <p>Bookings</p>
             </div>
 
           </div>
 
-        </div>
+        </motion.div>
 
       </section>
 
-      {/* STATEMENT */}
-      <section className="statement-section">
+      <section className="pricing-scene" id="pricing">
 
-        <span>WHY BUSINESSES LOSE CUSTOMERS</span>
-
-        <h2>
-          Most Businesses Have <br />
-          No Real Lead System.
-        </h2>
-
-        <p>
-          Customers visit. Nobody follows up. Leads get lost in WhatsApp.
-          We solve this using websites, booking systems, and smart enquiry flows.
-        </p>
-
-      </section>
-
-      {/* FEATURED WORK */}
-      <section className="featured" id="work">
-
-        <div className="section-top">
-          <span>LIVE DEMOS</span>
-          <h2>Conversion-Focused Projects</h2>
+        <div className="section-heading center">
+          <span>PACKAGES</span>
+          <h2>Choose Your Growth System</h2>
         </div>
 
-        <div className="project-card">
+        <div className="pricing-grid">
 
-          <div className="project-info">
-
-            <span>Luxury Salon System</span>
-
-            <h3>Good Fellas</h3>
-
-            <p>
-              Premium salon website focused on visual branding,
-              mobile conversion, WhatsApp enquiries, and modern customer experience.
-            </p>
-
-            <a
-              href="https://good-fellassalon-a37k.vercel.app/#reviews"
-              target="_blank"
-            >
-              View Live Project ↗
-            </a>
-
+          <div className="cinematic-price-card">
+            <h3>Starter</h3>
+            <h4>₹9,999</h4>
+            <p>Premium website foundation</p>
           </div>
 
-          <div className="project-preview">
+          <div className="cinematic-price-card featured">
+            <div className="popular-tag">MOST POPULAR</div>
+            <h3>Growth</h3>
+            <h4>₹19,999</h4>
+            <p>CRM + dashboard + automation foundation</p>
+          </div>
 
-            <iframe
-              src="https://good-fellassalon-a37k.vercel.app/#reviews"
-              title="preview"
-            ></iframe>
-
+          <div className="cinematic-price-card">
+            <h3>Automation</h3>
+            <h4>₹34,999+</h4>
+            <p>Advanced automation ecosystem</p>
           </div>
 
         </div>
 
       </section>
 
-      {/* SERVICES */}
-      <section className="services" id="services">
+      <section className="faq-scene">
 
-        <div className="section-top center">
-          <span>HOW THE SYSTEM WORKS</span>
-          <h2>Built To Generate Enquiries</h2>
+        <div className="section-heading center">
+          <span>QUESTIONS</span>
+          <h2>Frequently Asked Questions</h2>
         </div>
 
-        <div className="services-grid">
+        <div className="faq-grid">
 
-          <div className="service-card">
-            <h3>Premium Website</h3>
-            <p>Modern mobile-first experience that builds trust.</p>
+          <div className="faq-card">
+            <h3>How long does development take?</h3>
+            <p>Usually between 7–14 days depending on complexity.</p>
           </div>
 
-          <div className="service-card">
-            <h3>Lead Capture System</h3>
-            <p>Forms + WhatsApp + tracking dashboard.</p>
-          </div>
-
-          <div className="service-card">
-            <h3>Booking Automation</h3>
-            <p>Convert visitors into appointments automatically.</p>
+          <div className="faq-card">
+            <h3>Do you provide hosting?</h3>
+            <p>Yes. Deployment and hosting setup are included.</p>
           </div>
 
         </div>
 
       </section>
 
-      {/* LEAD FORM */}
-      <section className="lead-section" id="contact">
+      <section className="lead-scene" id="contact">
 
-        <div className="section-top center">
-          <span>GET A FREE STRATEGY PLAN</span>
+        <div className="section-heading center">
+          <span>START YOUR PROJECT</span>
           <h2>Tell Us About Your Business</h2>
         </div>
 
-        <div className="lead-container">
+        <div className="lead-wrapper">
 
-          <div className="lead-info">
+          <div className="lead-copy">
             <h3>
-              We build systems that turn visitors into paying customers using automation, booking flows, and lead funnels.
+              We design conversion-focused systems built to generate enquiries.
             </h3>
-
-            <div className="lead-points">
-              <div>✓ Premium Website</div>
-              <div>✓ WhatsApp Integration</div>
-              <div>✓ Booking System</div>
-              <div>✓ Lead Automation</div>
-            </div>
           </div>
 
           <LeadForm />
@@ -229,175 +357,30 @@ const openCalendly = () => {
         </div>
 
       </section>
-<section className="pricing" id="pricing">
 
-  <div className="section-top center">
-    <span>PACKAGES</span>
-    <h2>Choose Your Growth System</h2>
-  </div>
+      <section className="final-cta">
 
-  <div className="pricing-grid">
+        <motion.h2
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          Build Something
+          <br />
+          Customers Remember
+        </motion.h2>
 
-    {/* STARTER */}
-    <div className="price-card">
-
-      <h3>Starter Website</h3>
-      <p className="package-price">₹9,999</p>
-      <h4>High-converting business website</h4>
-
-      <ul>
-        <li>Modern responsive website (mobile-first)</li>
-        <li>Premium UI/UX design</li>
-        <li>WhatsApp click-to-chat integration</li>
-        <li>Contact / lead form (Web3Forms)</li>
-        <li>Email delivery of enquiries (via Web3Forms)</li>
-        <li>Basic SEO setup</li>
-        <li>Fast deployment (live website)</li>
-      </ul>
-
-      <a
-        href="https://wa.me/91YOURNUMBER?text=I%20want%20the%20Starter%20Website%20Package"
-        target="_blank"
-      >
-        Get Started
-      </a>
-
-    </div>
-
-    {/* GROWTH SYSTEM */}
-    <div className="price-card featured-price">
-
-      <div className="popular-tag">MOST POPULAR</div>
-
-      <h3>Growth System</h3>
-      <p className="package-price">₹19,999</p>
-      <h4>Complete lead management system</h4>
-
-      <ul>
-        <li>Everything in Starter Package</li>
-        <li>Supabase CRM database (lead storage)</li>
-        <li>Admin dashboard (SaaS-style interface)</li>
-        <li>Lead management system (search / delete / view)</li>
-        <li>Lead tracking foundation (CRM structure)</li>
-        <li>Booking system integration (Calendly)</li>
-        <li>Custom email automation (advanced workflows)</li>
-        <li>Conversion-focused UI dashboard</li>
-      </ul>
-
-      <a
-        href="https://wa.me/91YOURNUMBER?text=I%20want%20the%20Growth%20System%20Package"
-        target="_blank"
-      >
-        Get Started
-      </a>
-
-    </div>
-
-    {/* AUTOMATION */}
-    <div className="price-card">
-
-      <h3>Automation System</h3>
-      <p className="package-price">₹34,999+</p>
-      <h4>Advanced business automation engine</h4>
-
-      <ul>
-        <li>Everything in Growth System</li>
-        <li>AI chatbot integration</li>
-        <li>Automated follow-up sequences (email / WhatsApp)</li>
-        <li>Advanced lead scoring system</li>
-        <li>Conversion tracking & analytics</li>
-        <li>Workflow automation system</li>
-        <li>Performance optimization layer</li>
-      </ul>
-
-      <a
-        href="https://wa.me/91YOURNUMBER?text=I%20want%20the%20Automation%20System%20Package"
-        target="_blank"
-      >
-        Get Started
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-          {/* DASHBOARD PREVIEW */}
-      <section className="dashboard-preview">
-
-        <div className="section-top center">
-          <span>BUSINESS DASHBOARD</span>
-          <h2>Track Leads & Enquiries</h2>
-        </div>
-
-        <div className="dashboard-box">
-
-          <div className="dashboard-content">
-
-            <div className="dashboard-card">
-              <h3>24</h3>
-              <p>New Leads</p>
-            </div>
-
-            <div className="dashboard-card">
-              <h3>89%</h3>
-              <p>Reply Rate</p>
-            </div>
-
-            <div className="dashboard-card">
-              <h3>12</h3>
-              <p>Bookings</p>
-            </div>
-
-          </div>
-
-        </div>
+        <motion.a
+          href="#"
+          onClick={openCalendly}
+          className="contact-btn cinematic-btn"
+          whileHover={{ scale: 1.05 }}
+        >
+          Launch My System
+        </motion.a>
 
       </section>
-
-      {/* REVIEWS */}
-      <section className="reviews" id="reviews">
-
-        <div className="section-top center">
-          <span>CLIENT RESULTS</span>
-          <h2>Trusted by Modern Businesses</h2>
-        </div>
-
-        <div className="reviews-grid">
-
-          <div className="review-card">
-            <p>“Website improved our enquiries massively.”</p>
-            <h4>Good Fellas Salon</h4>
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="contact">
-
-        <h2>Build a System That Brings Customers</h2>
-
-        <a
-  href="#"
-  onClick={openCalendly}
-  className="contact-btn"
->
-  Launch My Growth System
-</a>
-
-      </section>
-
-      {/* WHATSAPP */}
-      <a
-        href="https://wa.me/91YOURNUMBER"
-        target="_blank"
-        className="floating-whatsapp"
-      >
-        WhatsApp
-      </a>
 
     </div>
   )
