@@ -123,12 +123,21 @@ export default function Home() {
   </p>
 
   <div className="statement-list">
-    <div className="statement-item">Landing pages that convert traffic</div>
-    <div className="statement-item">Automated WhatsApp follow-ups</div>
-    <div className="statement-item">CRM-based lead tracking</div>
+
+    <div className="statement-item">
+      • Landing pages that convert traffic
+    </div>
+
+    <div className="statement-item">
+      • Automated WhatsApp follow-ups
+    </div>
+
+    <div className="statement-item">
+      • CRM-based lead tracking
+    </div>
+
   </div>
 </section>
-
       {/* ================= FEATURED WORK ================= */}
       <section className="featured" id="work">
 
