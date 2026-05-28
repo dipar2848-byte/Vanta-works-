@@ -49,24 +49,47 @@ export default async function handler(req, res) {
     // ---------------- EMAIL TO ADMIN ----------------
     try {
       await resend.emails.send({
-        from: "VantaWorks <onboarding@resend.dev>",
-        to: "vantaworkss@gmail.com",
-        subject: "🔥 New Lead Received",
-        html: `
-          <h2>New Lead</h2>
+  from: "VantaWorks <onboarding@resend.dev>",
+  to: "vantaworkss@gmail.com",
+  subject: "🔥 New Lead Received",
 
-          <p><b>Name:</b> ${lead.name}</p>
+  html: `
+    <div style="font-family: Arial, sans-serif; padding: 20px;">
 
-          <p><b>Business:</b> ${lead.business}</p>
+      <h2 style="margin-bottom: 20px;">
+        🔥 New Lead Received
+      </h2>
 
-          <p><b>Email:</b> ${lead.email}</p>
+      <p><b>Name:</b> ${lead.name}</p>
 
-          <p><b>Phone:</b> ${lead.phone}</p>
+      <p><b>Business:</b> ${lead.business}</p>
 
-          <p><b>Message:</b> ${lead.message}</p>
-        `,
-      })
+      <p><b>Email:</b> ${lead.email}</p>
 
+      <p><b>Phone:</b> ${lead.phone}</p>
+
+      <p><b>Message:</b> ${lead.message}</p>
+
+      <br />
+
+      <a
+        href="https://YOUR-DOMAIN/dashboard"
+        style="
+          display: inline-block;
+          padding: 12px 20px;
+          background: black;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-weight: bold;
+        "
+      >
+        Open CRM Dashboard
+      </a>
+
+    </div>
+  `,
+})
       // mark email sent
       await supabase
         .from("leads")
