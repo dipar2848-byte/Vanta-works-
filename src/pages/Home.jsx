@@ -110,21 +110,25 @@ export default function Home() {
       </section>
 
       {/* ================= STATEMENT ================= */}
-      <section className="statement-section">
+    <section className="statement-section">
+  <span>WHY BUSINESSES LOSE CUSTOMERS</span>
 
-        <span>WHY BUSINESSES LOSE CUSTOMERS</span>
+  <h2>
+    Most Businesses Have <br />
+    No Real Lead System.
+  </h2>
 
-        <h2>
-          Most Businesses Have <br />
-          No Real Lead System.
-        </h2>
+  <p>
+    Customers visit. Nobody follows up. Leads get lost in WhatsApp.
+    We solve this using structured systems:
+  </p>
 
-        <p>
-          Customers visit. Nobody follows up. Leads get lost in WhatsApp.
-          We solve this using websites, booking systems, and smart enquiry flows.
-        </p>
-
-      </section>
+  <ul className="statement-list">
+    <li>Landing pages that convert traffic</li>
+    <li>Automated WhatsApp follow-ups</li>
+    <li>CRM-based lead tracking</li>
+  </ul>
+</section>
 
       {/* ================= FEATURED WORK ================= */}
       <section className="featured" id="work">
