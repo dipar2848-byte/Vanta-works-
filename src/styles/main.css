@@ -1,5 +1,7 @@
 /* ================= NAVBAR ================= */
-
+body {
+  outline: 5px solid red !important;
+}
 .navbar {
   width: 100%;
   padding: 28px 7%;
