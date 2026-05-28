@@ -182,3 +182,12 @@ body {
 .price-btn:hover {
   transform: translateY(-4px);
 }
+.price-btn {
+  all: unset !important;
+  display: block !important;
+  background: yellow !important;
+  color: black !important;
+  padding: 20px !important;
+  text-align: center !important;
+  font-weight: 900 !important;
+}
