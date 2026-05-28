@@ -1,139 +1,154 @@
-/* ===== BASE RESET ===== */
+/* ================= BASE ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Inter, sans-serif;
   background: #050505;
   color: white;
-  font-family: Inter, sans-serif;
-  overflow-x: hidden;
 }
 
 .site {
   width: 100%;
 }
 
-/* ===== NAVBAR ===== */
+/* ================= NAV ================= */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  padding: 18px 7%;
+  padding: 16px 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
-.logo-wrap {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+/* ================= SECTIONS ================= */
+section {
+  padding: 100px 6%;
 }
 
-.logo-box {
-  width: 40px;
-  height: 40px;
-  background: white;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  border-radius: 8px;
-}
-
-/* ===== HERO ===== */
+/* ================= HERO ================= */
 .hero {
-  padding: 140px 7% 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  padding-top: 140px;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  line-height: 1.1;
+  font-size: clamp(2.2rem, 6vw, 5.5rem);
+  line-height: 1.05;
 }
 
 .hero p {
-  margin-top: 20px;
+  margin-top: 18px;
   color: #aaa;
+  font-size: 1rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* ===== BUTTONS ===== */
+/* ================= BUTTONS ================= */
 .hero-buttons {
-  margin-top: 30px;
+  margin-top: 28px;
   display: flex;
-  gap: 15px;
+  gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .primary-btn,
 .secondary-btn,
-.btn {
+.btn,
+.nav-btn {
   padding: 12px 18px;
   border-radius: 10px;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.2s;
 }
 
 .primary-btn,
-.btn {
+.btn,
+.nav-btn {
   background: white;
   color: black;
+  border: none;
 }
 
 .secondary-btn {
   border: 1px solid #333;
   color: white;
+  background: transparent;
 }
 
-/* ===== SECTIONS ===== */
-section {
-  padding: 90px 7%;
-}
-
-.section-title {
+/* ================= STATEMENT ================= */
+.statement-section {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
 }
 
-/* ===== STATEMENT ===== */
-.statement-list {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 700px;
+.statement-section h2 {
+  margin-top: 18px;
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+}
+
+.statement-section p {
+  margin-top: 18px;
+  color: #aaa;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* ===== GRID SYSTEM ===== */
-.services-grid,
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.statement-list {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ddd;
 }
 
-/* ===== CARDS ===== */
+/* ================= GRID SYSTEM ================= */
+.services-grid,
+.pricing-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* ================= CARDS ================= */
 .card,
 .price-card {
   background: #111;
-  padding: 25px;
+  padding: 22px;
   border-radius: 14px;
 }
 
+/* ================= PRICING ================= */
+.price-card h3 {
+  font-size: 1.4rem;
+}
+
 .price {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 10px 0;
 }
 
@@ -144,14 +159,26 @@ section {
 
 .price-card ul li {
   margin-bottom: 8px;
+  color: #ccc;
 }
 
-/* ===== FEATURED ===== */
-.featured {
-  border: 1px solid #444;
-}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
 
-/* ===== CONTACT ===== */
-.contact {
-  text-align: center;
+  section {
+    padding: 80px 5%;
+  }
+
+  .services-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .navbar {
+    padding: 14px 5%;
+  }
 }
