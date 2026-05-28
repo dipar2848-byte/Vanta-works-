@@ -120,13 +120,12 @@ export default function Home() {
 
   <p>
     Customers visit. Nobody follows up. Leads get lost in WhatsApp.
-    We solve this using structured systems:
   </p>
 
   <div className="statement-list">
-    <div className="statement-item">- Landing pages that convert traffic</div>
-    <div className="statement-item">- Automated WhatsApp follow-ups</div>
-    <div className="statement-item">- CRM-based lead tracking</div>
+    <div className="statement-item">Landing pages that convert traffic</div>
+    <div className="statement-item">Automated WhatsApp follow-ups</div>
+    <div className="statement-item">CRM-based lead tracking</div>
   </div>
 </section>
 
