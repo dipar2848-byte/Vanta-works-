@@ -1,7 +1,5 @@
 import { useRef } from "react";
 import LeadForm from "../LeadForm";
-
-import { motion } from "framer-motion";
 import WebGLScene from "../three/WebGLScene";
 import useScrollProgress from "../hooks/useScrollProgress";
 
@@ -28,9 +26,9 @@ export default function Home() {
 
       {/* ================= NAVBAR ================= */}
       <header className="navbar">
+
         <div className="logo-wrap">
           <div className="logo-box">VW</div>
-
           <div className="logo-text">
             <span>VANTA</span>
             <span>WORKS</span>
@@ -50,22 +48,14 @@ export default function Home() {
         </a>
       </header>
 
-      {/* ================= HERO (SCROLL DRIVEN) ================= */}
-      <motion.section
-        className="hero"
-        ref={heroRef}
-        style={{
-          opacity: 1 - scroll * 1.2,
-          scale: 1 - scroll * 0.08,
-        }}
-      >
+      {/* ================= HERO ================= */}
+      <section className="hero">
+
         <div className="hero-bg"></div>
 
-        <motion.div
+        <div
           className="hero-center"
-          style={{
-            y: scroll * -150,
-          }}
+          style={{ transform: `translateY(${scroll * -40}px)` }}
         >
           <div className="hero-badge">
             DIGITAL GROWTH SYSTEMS FOR LOCAL BUSINESSES
@@ -78,7 +68,8 @@ export default function Home() {
 
           <p>
             Vanta Works builds premium websites, WhatsApp lead systems,
-            booking flows, and automation setups that convert traffic into revenue.
+            booking flows, and automation setups that help businesses
+            generate more enquiries and conversions online.
           </p>
 
           <div className="hero-buttons">
@@ -96,7 +87,7 @@ export default function Home() {
           </div>
 
           <div className="hero-price">
-            Starting from ₹9,999 • Premium systems for businesses
+            Starting from ₹9,999 • Premium websites + lead systems
           </div>
 
           <div className="hero-stats">
@@ -107,19 +98,20 @@ export default function Home() {
 
             <div>
               <h3>Smart</h3>
-              <p>Automation Systems</p>
+              <p>Business Automation</p>
             </div>
 
             <div>
-              <h3>Fast</h3>
-              <p>Lead Conversion Flow</p>
+              <h3>Focused</h3>
+              <p>Lead Generation Systems</p>
             </div>
           </div>
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
       {/* ================= STATEMENT ================= */}
       <section className="statement-section">
+
         <span>WHY BUSINESSES LOSE CUSTOMERS</span>
 
         <h2>
@@ -128,27 +120,31 @@ export default function Home() {
         </h2>
 
         <p>
-          Customers visit websites but never convert. Leads get lost in WhatsApp.
-          We fix this using structured funnels, automation, and booking flows.
+          Customers visit. Nobody follows up. Leads get lost in WhatsApp.
+          We solve this using websites, booking systems, and smart enquiry flows.
         </p>
+
       </section>
 
       {/* ================= FEATURED WORK ================= */}
       <section className="featured" id="work">
+
         <div className="section-top">
           <span>LIVE DEMOS</span>
           <h2>Conversion-Focused Projects</h2>
         </div>
 
         <div className="project-card">
+
           <div className="project-info">
+
             <span>Luxury Salon System</span>
 
             <h3>Good Fellas</h3>
 
             <p>
-              Premium salon website focused on conversions, WhatsApp leads,
-              and mobile-first booking experience.
+              Premium salon website focused on visual branding,
+              mobile conversion, WhatsApp enquiries, and modern customer experience.
             </p>
 
             <a
@@ -157,6 +153,7 @@ export default function Home() {
             >
               View Live Project ↗
             </a>
+
           </div>
 
           <div className="project-preview">
@@ -165,97 +162,127 @@ export default function Home() {
               title="preview"
             />
           </div>
+
         </div>
       </section>
 
       {/* ================= SERVICES ================= */}
       <section className="services" id="services">
+
         <div className="section-top center">
           <span>HOW THE SYSTEM WORKS</span>
           <h2>Built To Generate Enquiries</h2>
         </div>
 
         <div className="services-grid">
-          <motion.div
-            className="service-card"
-            whileHover={{ y: -10, scale: 1.02 }}
-          >
+
+          <div className="service-card">
             <h3>Premium Website</h3>
-            <p>Mobile-first, conversion-focused design.</p>
-          </motion.div>
+            <p>Modern mobile-first experience that builds trust.</p>
+          </div>
 
-          <motion.div
-            className="service-card"
-            whileHover={{ y: -10, scale: 1.02 }}
-          >
-            <h3>Lead System</h3>
-            <p>Forms, WhatsApp, CRM tracking.</p>
-          </motion.div>
+          <div className="service-card">
+            <h3>Lead Capture System</h3>
+            <p>Forms + WhatsApp + tracking dashboard.</p>
+          </div>
 
-          <motion.div
-            className="service-card"
-            whileHover={{ y: -10, scale: 1.02 }}
-          >
-            <h3>Automation</h3>
-            <p>Email + workflow automation systems.</p>
-          </motion.div>
+          <div className="service-card">
+            <h3>Booking Automation</h3>
+            <p>Convert visitors into appointments automatically.</p>
+          </div>
+
         </div>
       </section>
 
       {/* ================= LEAD FORM ================= */}
       <section className="lead-section" id="contact">
+
         <div className="section-top center">
           <span>GET A FREE STRATEGY PLAN</span>
           <h2>Tell Us About Your Business</h2>
         </div>
 
         <div className="lead-container">
+
           <div className="lead-info">
             <h3>
-              We build systems that turn visitors into paying customers using automation and funnels.
+              We build systems that turn visitors into paying customers using automation, booking flows, and lead funnels.
             </h3>
 
             <div className="lead-points">
               <div>✓ Premium Website</div>
               <div>✓ WhatsApp Integration</div>
               <div>✓ Booking System</div>
-              <div>✓ CRM Tracking</div>
+              <div>✓ Lead Automation</div>
             </div>
           </div>
 
           <LeadForm />
+
         </div>
+
       </section>
 
-      {/* ================= PRICING ================= */}
+      {/* ================= PRICING (FULL RESTORED) ================= */}
       <section className="pricing" id="pricing">
+
         <div className="section-top center">
           <span>PACKAGES</span>
           <h2>Choose Your Growth System</h2>
         </div>
 
         <div className="pricing-grid">
+
           <div className="price-card">
-            <h3>Starter</h3>
+            <h3>Starter Website</h3>
             <p className="package-price">₹9,999</p>
-            <h4>Basic business website</h4>
+            <h4>High-converting business website</h4>
+
+            <ul>
+              <li>Modern responsive website (mobile-first)</li>
+              <li>Premium UI/UX design</li>
+              <li>WhatsApp click-to-chat integration</li>
+              <li>Contact / lead form (Web3Forms)</li>
+              <li>Email delivery of enquiries</li>
+              <li>Basic SEO setup</li>
+              <li>Fast deployment</li>
+            </ul>
           </div>
 
           <div className="price-card featured-price">
-            <h3>Growth</h3>
+            <h3>Growth System</h3>
             <p className="package-price">₹19,999</p>
-            <h4>Full CRM system</h4>
+            <h4>Complete lead management system</h4>
+
+            <ul>
+              <li>Everything in Starter Package</li>
+              <li>Supabase CRM database</li>
+              <li>Admin dashboard</li>
+              <li>Lead tracking system</li>
+              <li>Booking system integration</li>
+              <li>Email automation workflows</li>
+            </ul>
           </div>
 
           <div className="price-card">
-            <h3>Automation</h3>
+            <h3>Automation System</h3>
             <p className="package-price">₹34,999+</p>
-            <h4>AI + automation system</h4>
+            <h4>Advanced business automation engine</h4>
+
+            <ul>
+              <li>Everything in Growth System</li>
+              <li>AI chatbot integration</li>
+              <li>Automated follow-ups</li>
+              <li>Lead scoring system</li>
+              <li>Analytics dashboard</li>
+            </ul>
           </div>
+
         </div>
+
       </section>
 
-      {/* ================= FLOAT BUTTON ================= */}
+      {/* ================= FLOATING WHATSAPP ================= */}
       <a
         href="https://wa.me/91YOURNUMBER"
         target="_blank"
