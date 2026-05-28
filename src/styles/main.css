@@ -157,3 +157,26 @@
   border-radius: 999px;
   font-weight: 600;
 }
+.price-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  margin-top: 20px;
+
+  padding: 18px;
+  border-radius: 16px;
+
+  background: white;
+  color: black;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: transform 0.25s ease;
+}
+
+.price-btn:hover {
+  transform: translateY(-4px);
+}
