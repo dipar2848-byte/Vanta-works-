@@ -1794,3 +1794,158 @@ body {
 .hero {
   will-change: transform, opacity;
 }
+/* ===============================
+   V7 STABILITY PATCH (FIX ALL ISSUES)
+   - overflow fix
+   - readability fix
+   - WebGL safety layer
+   - pricing button restore
+   - responsive typography fix
+================================= */
+
+/* GLOBAL SAFETY */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.site {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ================= WEBGL LAYER FIX ================= */
+.webgl-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* ensure all UI stays above WebGL */
+.navbar,
+.hero,
+.statement-section,
+.featured,
+.services,
+.lead-section,
+.pricing,
+.reviews,
+.contact {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= TYPOGRAPHY FIX ================= */
+
+/* prevents hero overflow on all devices */
+.hero h1 {
+  font-size: clamp(2.8rem, 5vw, 6rem);
+  line-height: 1;
+  word-break: break-word;
+}
+
+.statement-section h2,
+.section-top h2,
+.contact h2 {
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  line-height: 1.1;
+}
+
+/* ================= PRICING FIX ================= */
+
+.price-card {
+  overflow: hidden;
+}
+
+.price-card ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* restore CTA button inside pricing */
+.price-btn {
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 14px 18px;
+  width: 100%;
+  justify-content: center;
+
+  background: white;
+  color: black;
+  text-decoration: none;
+
+  border-radius: 14px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.price-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* ================= GRID SAFETY ================= */
+
+.services-grid,
+.pricing-grid,
+.reviews-grid,
+.project-card {
+  max-width: 100%;
+}
+
+/* prevents weird horizontal scroll from grids */
+.services-grid,
+.pricing-grid {
+  overflow-x: hidden;
+}
+
+/* ================= MOBILE STABILITY ================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 120px 5% 80px;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .navbar nav {
+    display: none;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+  }
+
+  .hero-stats div {
+    width: 100%;
+  }
+}
+
+/* ================= VISUAL CLEANUP ================= */
+
+.noise {
+  opacity: 0.02;
+}
+
+body {
+  background: #050505;
+}
+
+/* reduces WebGL visual interference */
+.webgl-bg canvas {
+  display: block;
+}
